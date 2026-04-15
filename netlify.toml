@@ -5,7 +5,7 @@
 # ── API Proxy (all /api/* requests → Render backend) ──
 [[redirects]]
   from = "/api/*"
-  to = "to = "https://dsa-questions-liz9.onrender.com/api/:splat"
+  to = "https://dsa-questions-liz9.onrender.com/api/:splat"
   status = 200
   force = true
 
