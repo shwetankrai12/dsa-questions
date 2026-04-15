@@ -1,4 +1,6 @@
-# DSA Sheet by Shwetank 📊
+# DSA Sheet by Shwetank
+
+🌐 **Live Demo**: [dsasheetbyshwetank.netlify.app](https://dsasheetbyshwetank.netlify.app)
 
 > Master Data Structures & Algorithms, one problem at a time.
 
@@ -54,7 +56,7 @@ A premium, dark-themed DSA preparation platform with progress tracking across 24
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/shwetankrai12/dsasheetbyshwetank.git
+git clone https://github.com/shwetankrai12/dsa-questions.git
 cd dsasheetbyshwetank
 cd backend && npm install
 ```
@@ -92,6 +94,14 @@ Designed using **Stitch MCP** with the "Obsidian Architect" theme:
 - **Font**: Inter (all weights)
 - **Philosophy**: No borders, tonal depth, editorial precision
 
+## 🔗 Links
+
+| | |
+|---|---|
+| 🌐 Live App | [dsasheetbyshwetank.netlify.app](https://dsasheetbyshwetank.netlify.app) |
+| 💻 GitHub | [github.com/shwetankrai12/dsa-questions](https://github.com/shwetankrai12/dsa-questions) |
+| ⚙️ Backend | [dsa-questions-liz9.onrender.com](https://dsa-questions-liz9.onrender.com) |
+
 ## 📝 License
 
-MIT © Shwetank
+MIT © 2026 Shwetank Rai
