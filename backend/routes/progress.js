@@ -3,20 +3,9 @@
 // ============================================================
 
 const express = require('express');
-const {
-  getProgress,
-  getSectionProgress,
-  upsertProgress
-} = require('../config/supabase');
+const { getProgress, getSectionProgress, upsertProgress } = require('../config/supabase');
+const { requireAuth } = require('../middleware/auth');
 const router = express.Router();
-
-// ── Auth Middleware ──────────────────────────────────────────
-function requireAuth(req, res, next) {
-  if (!req.isAuthenticated()) {
-    return res.status(401).json({ error: 'Authentication required' });
-  }
-  next();
-}
 
 // ── GET /api/progress ────────────────────────────────────────
 // Returns all progress as { section: { questionId: status } }
@@ -44,7 +33,6 @@ router.get('/:section', requireAuth, async (req, res) => {
 
 // ── POST /api/progress ───────────────────────────────────────
 // Body: { section, questionId, status }
-// Primary endpoint used by the frontend on every status button click.
 router.post('/', requireAuth, async (req, res) => {
   const { section, questionId, status } = req.body;
 
@@ -65,7 +53,6 @@ router.post('/', requireAuth, async (req, res) => {
 });
 
 // ── PUT /api/progress/:section/:questionId ───────────────────
-// RESTful alternative — same result as POST /
 router.put('/:section/:questionId', requireAuth, async (req, res) => {
   const { section, questionId } = req.params;
   const { status } = req.body;
@@ -84,8 +71,6 @@ router.put('/:section/:questionId', requireAuth, async (req, res) => {
 });
 
 // ── POST /api/progress/bulk ──────────────────────────────────
-// Body: { updates: [{ section, questionId, status }] }
-// NOTE: declared after POST / so Express matches /bulk before the root handler.
 router.post('/bulk', requireAuth, async (req, res) => {
   const { updates } = req.body;
 

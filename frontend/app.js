@@ -3,11 +3,12 @@
    ============================================================ */
 
 // ═══ Configuration ═══════════════════════════════════════════
-// Local dev (served from backend on :3001) → absolute URL avoids any port mismatch.
-// Production on Netlify → relative /api is rewritten by the netlify.toml proxy.
+// Local dev  → absolute backend URL (avoids port mismatch on :3001)
+// Production → relative /api  (Netlify proxy rewrites to Render)
 const API_BASE = window.location.hostname === 'localhost'
   ? 'http://localhost:3001/api'
   : '/api';
+
 const SECTIONS = {
   dsa:           { name: 'DSA',           icon: '📊', color: '#a3e635' },
   interview:     { name: 'Interview Prep', icon: '💼', color: '#f59e0b' },
@@ -16,12 +17,56 @@ const SECTIONS = {
 };
 
 // ═══ State ═══════════════════════════════════════════════════
-let currentUser  = null;
-let currentLevel = localStorage.getItem('dsa_level') || null;
+let currentUser   = null;
+let currentLevel  = localStorage.getItem('dsa_level') || null;
 let questionsData = null;
 let progressData  = {};
 
-// ═══ Utilities ═══════════════════════════════════════════════
+// ═══ JWT Helpers ══════════════════════════════════════════════
+
+function getToken() {
+  return localStorage.getItem('dsa_token');
+}
+
+function saveToken(token) {
+  localStorage.setItem('dsa_token', token);
+}
+
+/**
+ * Decode the JWT payload without verifying the signature.
+ * Used only for reading user data client-side (display purposes).
+ * All sensitive operations go through the backend which verifies the token.
+ */
+function decodeToken() {
+  const token = getToken();
+  if (!token) return null;
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    // Reject if expired
+    if (payload.exp && payload.exp * 1000 < Date.now()) return null;
+    return payload;
+  } catch (_) {
+    return null;
+  }
+}
+
+/**
+ * fetch() wrapper that automatically adds Authorization: Bearer <token>.
+ * Use this for every API call that requires authentication.
+ */
+function authFetch(url, options = {}) {
+  const token = getToken();
+  return fetch(url, {
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+      ...(token ? { Authorization: `Bearer ${token}` } : {})
+    }
+  });
+}
+
+// ═══ Utilities ════════════════════════════════════════════════
 function showToast(message, duration = 3000) {
   const toast = document.getElementById('toast');
   if (!toast) return;
@@ -46,34 +91,28 @@ function getProgress(sectionKey) {
 // ═══ Auth ═════════════════════════════════════════════════════
 
 /**
- * Fetch the current session user from the backend.
- * Syncs level to localStorage when the backend has one we don't.
+ * Load the current user from the stored JWT (no network call).
+ * Also syncs currentLevel from the token if localStorage is empty.
  */
-async function fetchUser() {
-  try {
-    const res = await fetch(`${API_BASE}/auth/me`, { credentials: 'include' });
-    if (!res.ok) return null;
-    const data = await res.json();
-    if (data.authenticated) {
-      currentUser = data.user;
-      if (data.user.level && !currentLevel) {
-        currentLevel = data.user.level;
-        localStorage.setItem('dsa_level', currentLevel);
-      }
-      return currentUser;
-    }
-  } catch (_) { /* offline / no backend */ }
-  return null;
+function loadUserFromToken() {
+  const payload = decodeToken();
+  if (!payload) return null;
+
+  currentUser = payload;
+  if (payload.level && !currentLevel) {
+    currentLevel = payload.level;
+    localStorage.setItem('dsa_level', currentLevel);
+  }
+  return currentUser;
 }
 
 function handleGoogleLogin() {
   window.location.href = `${API_BASE}/auth/google`;
 }
 
-async function handleLogout() {
-  try {
-    await fetch(`${API_BASE}/auth/logout`, { method: 'POST', credentials: 'include' });
-  } catch (_) { /* continue even if request fails */ }
+function handleLogout() {
+  // JWT is stateless — just clear local storage
+  localStorage.removeItem('dsa_token');
   localStorage.removeItem('dsa_level');
   localStorage.removeItem('dsa_progress');
   window.location.href = 'index.html';
@@ -97,24 +136,23 @@ async function confirmLevel() {
   currentLevel = selected.dataset.level;
   localStorage.setItem('dsa_level', currentLevel);
 
-  // Save to backend, then redirect
+  // Save to backend — response includes a new token with the level embedded
   try {
-    await fetch(`${API_BASE}/level`, {
-      method:      'POST',
-      headers:     { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      body:        JSON.stringify({ level: currentLevel })
+    const res  = await authFetch(`${API_BASE}/level`, {
+      method: 'POST',
+      body:   JSON.stringify({ level: currentLevel })
     });
-  } catch (_) { /* continue even if backend is unreachable */ }
+    const data = await res.json();
+    if (data.token) saveToken(data.token); // refresh token with level inside
+  } catch (_) { /* continue offline */ }
 
   window.location.href = 'dashboard.html';
 }
 
-// ═══ Data Loading ══════════════════════════════════════════════
+// ═══ Data Loading ═════════════════════════════════════════════
 async function loadQuestions() {
   if (questionsData) return questionsData;
 
-  // Try backend first, fall back to local JSON file
   try {
     const res = await fetch(`${API_BASE}/questions`);
     if (res.ok) { questionsData = await res.json(); return questionsData; }
@@ -130,8 +168,8 @@ async function loadQuestions() {
 }
 
 function loadProgress() {
-  const stored  = localStorage.getItem('dsa_progress');
-  progressData  = stored ? JSON.parse(stored) : {};
+  const stored = localStorage.getItem('dsa_progress');
+  progressData = stored ? JSON.parse(stored) : {};
   return progressData;
 }
 
@@ -139,63 +177,56 @@ function saveProgress() {
   localStorage.setItem('dsa_progress', JSON.stringify(progressData));
 }
 
-/** Fetch all progress from the backend and merge over the local cache. */
 async function syncProgressFromBackend() {
   try {
-    const res = await fetch(`${API_BASE}/progress`, { credentials: 'include' });
+    const res = await authFetch(`${API_BASE}/progress`);
     if (!res.ok) return;
     const backendProgress = await res.json();
 
-    // Backend is source of truth — merge into progressData
     Object.entries(backendProgress).forEach(([section, questions]) => {
       if (!progressData[section]) progressData[section] = {};
       Object.assign(progressData[section], questions);
     });
-
     saveProgress();
   } catch (_) { /* offline — use localStorage */ }
 }
 
 // ═══ Dashboard ════════════════════════════════════════════════
 async function initDashboard() {
-  // Returning users arrive here via ?level=xxx from the OAuth callback
-  const levelParam = getUrlParam('level');
-  if (levelParam && !currentLevel) {
-    currentLevel = levelParam;
-    localStorage.setItem('dsa_level', currentLevel);
-    // Clean the URL without reloading
-    history.replaceState({}, '', 'dashboard.html');
+  // Returning users arrive here via ?token= from the OAuth callback redirect
+  const tokenParam = getUrlParam('token');
+  if (tokenParam) {
+    saveToken(tokenParam);
+    history.replaceState({}, '', 'dashboard.html'); // clean URL
   }
 
-  // Render skeleton → real data as quickly as possible
-  loadProgress();
-  await loadQuestions();
-  renderSectionCards();
-
-  // Hydrate user from session (also fills currentLevel if missing)
-  await fetchUser();
+  // Hydrate user from JWT (no network call needed)
+  loadUserFromToken();
 
   if (!currentLevel) {
     window.location.href = 'index.html';
     return;
   }
 
+  // Render immediately with local data
+  loadProgress();
+  await loadQuestions();
+  renderSectionCards();
+
   // Personalized greeting
   const greeting = document.getElementById('greeting');
   if (greeting) {
-    const hour          = new Date().getHours();
-    const timeGreeting  = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
-    const firstName     = currentUser?.name?.split(' ')[0] || '';
-    greeting.textContent = firstName
-      ? `${timeGreeting}, ${firstName}`
-      : timeGreeting;
+    const hour         = new Date().getHours();
+    const timeGreeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+    const firstName    = currentUser?.name?.split(' ')[0] || '';
+    greeting.textContent = firstName ? `${timeGreeting}, ${firstName}` : timeGreeting;
   }
 
   // Populate navbar avatar & name
   const navUserName = document.getElementById('nav-user-name');
   const navAvatar   = document.getElementById('nav-user-avatar');
   if (navUserName && currentUser) navUserName.textContent = currentUser.name?.split(' ')[0] || '';
-  if (navAvatar && currentUser) navAvatar.textContent = (currentUser.name?.[0] || '?').toUpperCase();
+  if (navAvatar   && currentUser) navAvatar.textContent   = (currentUser.name?.[0] || '?').toUpperCase();
 
   highlightSidebar('dashboard.html');
 
@@ -237,10 +268,9 @@ function renderSectionCards() {
 // ─── Streak ──────────────────────────────────────────────────
 async function loadStreak() {
   try {
-    const res = await fetch(`${API_BASE}/streak`, { credentials: 'include' });
+    const res = await authFetch(`${API_BASE}/streak`);
     if (!res.ok) return;
-    const streak = await res.json();
-    renderStreak(streak);
+    renderStreak(await res.json());
   } catch (_) {}
 }
 
@@ -255,16 +285,14 @@ function renderStreak(streak) {
 // ═══ Section / Question List ══════════════════════════════════
 async function initSection() {
   if (!currentLevel) {
-    window.location.href = 'index.html';
-    return;
+    // Try loading from token before giving up
+    loadUserFromToken();
+    if (!currentLevel) { window.location.href = 'index.html'; return; }
   }
 
   const sectionKey = getUrlParam('section') || 'dsa';
   const section    = SECTIONS[sectionKey];
-  if (!section) {
-    window.location.href = 'dashboard.html';
-    return;
-  }
+  if (!section) { window.location.href = 'dashboard.html'; return; }
 
   loadProgress();
   await loadQuestions();
@@ -278,7 +306,6 @@ async function initSection() {
   renderQuestionList(sectionKey);
   updateSectionSummary(sectionKey);
 
-  // Background: sync this section's progress from backend
   syncProgressFromBackend().then(() => {
     renderQuestionList(sectionKey);
     updateSectionSummary(sectionKey);
@@ -335,11 +362,9 @@ async function setStatus(sectionKey, questionId, status, event) {
   showToast(`Marked as ${labels[status]}`);
 
   // Persist to backend in the background
-  fetch(`${API_BASE}/progress`, {
-    method:      'POST',
-    headers:     { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    body:        JSON.stringify({ section: sectionKey, questionId, status })
+  authFetch(`${API_BASE}/progress`, {
+    method: 'POST',
+    body:   JSON.stringify({ section: sectionKey, questionId, status })
   }).catch(() => {});
 }
 
@@ -352,7 +377,7 @@ function updateSectionSummary(sectionKey) {
   const summaryDetail = document.getElementById('summary-detail');
 
   if (progressRing) {
-    const circumference = 2 * Math.PI * 24; // r = 24
+    const circumference = 2 * Math.PI * 24;
     progressRing.style.strokeDashoffset = circumference - (percentage / 100) * circumference;
   }
   if (progressText)  progressText.textContent  = `${percentage}%`;
@@ -378,37 +403,33 @@ function highlightBottomNav(href) {
   const landingPage = document.getElementById('landing-page');
   if (!landingPage) return; // Not on index.html
 
-  const levelPage  = document.getElementById('level-page');
-  const authParam  = getUrlParam('auth');
+  const levelPage = document.getElementById('level-page');
+  const authParam = getUrlParam('auth');
 
-  // ── Handle OAuth result first (takes priority over everything) ──
+  // ── OAuth just completed ──────────────────────────────────
   if (authParam === 'success') {
-    // New user just logged in — redirect to level selection page
-    window.location.href = 'level-select.html';
+    // Save the JWT that arrived with the redirect
+    const tokenParam = getUrlParam('token');
+    if (tokenParam) saveToken(tokenParam);
+    history.replaceState({}, '', 'index.html'); // clean URL
+
+    // Show level selection (embedded in index.html)
+    landingPage.style.display = 'none';
+    if (levelPage) levelPage.style.display = 'flex';
     return;
   }
 
   if (authParam === 'failed') {
-    // Show error message on the login page
     const errEl = document.getElementById('auth-error');
     if (errEl) errEl.style.display = 'block';
     return;
   }
 
-  // ── No auth param — normal landing page visit ──
-  // If user already has a level cached, skip login and go to dashboard
-  if (currentLevel) {
+  // ── Normal visit ──────────────────────────────────────────
+  // Already logged in (valid token + level) → skip to dashboard
+  if (getToken() && (currentLevel || decodeToken()?.level)) {
     window.location.href = 'dashboard.html';
     return;
   }
-  // Otherwise show the default login page (already visible)
+  // Otherwise show the login page (already visible by default)
 })();
-
-// ═══ Level Select Page (level-select.html) ════════════════════
-function initLevelSelect() {
-  // Already have a level → skip straight to dashboard
-  if (currentLevel) {
-    window.location.href = 'dashboard.html';
-    return;
-  }
-}

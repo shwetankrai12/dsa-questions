@@ -1,12 +1,23 @@
 // ============================================================
-// Auth Routes — Google OAuth
+// Auth Routes — Google OAuth + JWT issuance
 // ============================================================
 
-const express  = require('express');
-const passport = require('passport');
-const router   = express.Router();
+const express      = require('express');
+const passport     = require('passport');
+const jwt          = require('jsonwebtoken');
+const { requireAuth } = require('../middleware/auth');
+const router       = express.Router();
 
 const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3001';
+
+/** Sign a 30-day JWT containing all user fields the frontend needs. */
+function signToken(user) {
+  return jwt.sign(
+    { id: user.id, email: user.email, name: user.name, avatar: user.avatar, level: user.level || null },
+    process.env.JWT_SECRET,
+    { expiresIn: '30d' }
+  );
+}
 
 // ── Initiate Google Login ────────────────────────────────────
 router.get('/google', passport.authenticate('google', {
@@ -14,52 +25,49 @@ router.get('/google', passport.authenticate('google', {
 }));
 
 // ── Google OAuth Callback ────────────────────────────────────
+// Issues a JWT and redirects to the frontend with it in the URL.
+// The frontend reads the token, stores it in localStorage, then cleans the URL.
 router.get('/google/callback', (req, res, next) => {
-  passport.authenticate('google', (err, user, info) => {
+  passport.authenticate('google', (err, user) => {
     if (err) {
-      console.error('=== OAUTH ERROR ===');
-      console.error('code   :', err.code);
-      console.error('message:', err.message);
-      console.error('raw    :', JSON.stringify(err.oauthError || err));
-      return res.redirect(`${FRONTEND_URL}/index.html?auth=failed&reason=${encodeURIComponent(err.code + ': ' + err.message)}`);
+      console.error('OAuth error:', err.code, err.message);
+      return res.redirect(`${FRONTEND_URL}/index.html?auth=failed&reason=${encodeURIComponent(err.message)}`);
     }
     if (!user) {
-      console.error('OAuth no user returned:', info);
       return res.redirect(`${FRONTEND_URL}/index.html?auth=failed`);
     }
-    req.logIn(user, loginErr => {
-      if (loginErr) return next(loginErr);
-      if (user.isNewUser || !user.level) {
-        return res.redirect(`${FRONTEND_URL}/index.html?auth=success`);
-      }
-      res.redirect(`${FRONTEND_URL}/dashboard.html`);
-    });
+
+    const token = signToken(user);
+
+    if (user.isNewUser || !user.level) {
+      // New user → level selection page
+      return res.redirect(`${FRONTEND_URL}/index.html?auth=success&token=${token}`);
+    }
+    // Returning user → dashboard
+    res.redirect(`${FRONTEND_URL}/dashboard.html?token=${token}`);
   })(req, res, next);
 });
 
-// ── Get Current User ─────────────────────────────────────────
-router.get('/me', (req, res) => {
-  if (req.isAuthenticated()) {
-    return res.json({
-      authenticated: true,
-      user: {
-        id:     req.user.id,
-        name:   req.user.name,
-        email:  req.user.email,
-        avatar: req.user.avatar,
-        level:  req.user.level
-      }
-    });
-  }
-  res.json({ authenticated: false });
+// ── GET /api/auth/me ─────────────────────────────────────────
+// Returns user from the JWT — no session needed.
+router.get('/me', requireAuth, (req, res) => {
+  res.json({
+    authenticated: true,
+    user: {
+      id:     req.user.id,
+      name:   req.user.name,
+      email:  req.user.email,
+      avatar: req.user.avatar,
+      level:  req.user.level
+    }
+  });
 });
 
-// ── Logout ───────────────────────────────────────────────────
+// ── POST /api/auth/logout ────────────────────────────────────
+// JWT is stateless — server has nothing to destroy.
+// Client deletes the token from localStorage.
 router.post('/logout', (req, res) => {
-  req.logout(err => {
-    if (err) return res.status(500).json({ error: 'Logout failed' });
-    req.session.destroy(() => res.json({ success: true }));
-  });
+  res.json({ success: true });
 });
 
 module.exports = router;

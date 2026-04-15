@@ -1,23 +1,17 @@
 // ============================================================
 // User Routes — Level & Streak
-// Mounted at /api in server.js, so paths are /api/level and /api/streak
+// Mounted at /api → paths are /api/level and /api/streak
 // ============================================================
 
-const express             = require('express');
+const express              = require('express');
+const jwt                  = require('jsonwebtoken');
 const { saveLevel, getStreak } = require('../config/supabase');
-const router              = express.Router();
-
-// ── Auth Middleware ──────────────────────────────────────────
-function requireAuth(req, res, next) {
-  if (!req.isAuthenticated()) {
-    return res.status(401).json({ error: 'Authentication required' });
-  }
-  next();
-}
+const { requireAuth }      = require('../middleware/auth');
+const router               = express.Router();
 
 // ── POST /api/level ──────────────────────────────────────────
-// Persist the level the user selected and store it in the session
-// so subsequent /api/auth/me calls return the updated level.
+// Saves chosen level, then re-issues the JWT with the updated level
+// so the frontend's stored token stays in sync.
 router.post('/level', requireAuth, async (req, res) => {
   const { level } = req.body;
 
@@ -28,11 +22,14 @@ router.post('/level', requireAuth, async (req, res) => {
   try {
     await saveLevel(req.user.id, level);
 
-    // Keep session in sync
-    req.user.level     = level;
-    req.user.isNewUser = false;
+    // Issue a fresh token with the new level embedded
+    const token = jwt.sign(
+      { id: req.user.id, email: req.user.email, name: req.user.name, avatar: req.user.avatar, level },
+      process.env.JWT_SECRET,
+      { expiresIn: '30d' }
+    );
 
-    res.json({ success: true, level });
+    res.json({ success: true, level, token });
   } catch (err) {
     console.error('Error saving level:', err);
     res.status(500).json({ error: 'Failed to save level' });
@@ -40,7 +37,6 @@ router.post('/level', requireAuth, async (req, res) => {
 });
 
 // ── GET /api/streak ──────────────────────────────────────────
-// Returns { current_streak, last_practice_date }
 router.get('/streak', requireAuth, async (req, res) => {
   try {
     const streak = await getStreak(req.user.id);
