@@ -1,274 +1,2001 @@
 {
   "dsa": {
     "beginner": [
-      { "id": "dsa_b_1", "title": "Two Sum", "difficulty": "easy", "topic": "arrays", "link": "https://leetcode.com/problems/two-sum" },
-      { "id": "dsa_b_2", "title": "Best Time to Buy and Sell Stock", "difficulty": "easy", "topic": "arrays", "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock" },
-      { "id": "dsa_b_3", "title": "Contains Duplicate", "difficulty": "easy", "topic": "arrays", "link": "https://leetcode.com/problems/contains-duplicate" },
-      { "id": "dsa_b_4", "title": "Maximum Subarray", "difficulty": "medium", "topic": "arrays", "link": "https://leetcode.com/problems/maximum-subarray" },
-      { "id": "dsa_b_5", "title": "Valid Parentheses", "difficulty": "easy", "topic": "stacks", "link": "https://leetcode.com/problems/valid-parentheses" },
-      { "id": "dsa_b_6", "title": "Merge Two Sorted Lists", "difficulty": "easy", "topic": "linked-list", "link": "https://leetcode.com/problems/merge-two-sorted-lists" },
-      { "id": "dsa_b_7", "title": "Reverse Linked List", "difficulty": "easy", "topic": "linked-list", "link": "https://leetcode.com/problems/reverse-linked-list" },
-      { "id": "dsa_b_8", "title": "Valid Palindrome", "difficulty": "easy", "topic": "strings", "link": "https://leetcode.com/problems/valid-palindrome" },
-      { "id": "dsa_b_9", "title": "Binary Search", "difficulty": "easy", "topic": "binary-search", "link": "https://leetcode.com/problems/binary-search" },
-      { "id": "dsa_b_10", "title": "Climbing Stairs", "difficulty": "easy", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/climbing-stairs" },
-      { "id": "dsa_b_11", "title": "Invert Binary Tree", "difficulty": "easy", "topic": "trees", "link": "https://leetcode.com/problems/invert-binary-tree" },
-      { "id": "dsa_b_12", "title": "Maximum Depth of Binary Tree", "difficulty": "easy", "topic": "trees", "link": "https://leetcode.com/problems/maximum-depth-of-binary-tree" },
-      { "id": "dsa_b_13", "title": "Linked List Cycle", "difficulty": "easy", "topic": "linked-list", "link": "https://leetcode.com/problems/linked-list-cycle" },
-      { "id": "dsa_b_14", "title": "Single Number", "difficulty": "easy", "topic": "bit-manipulation", "link": "https://leetcode.com/problems/single-number" },
-      { "id": "dsa_b_15", "title": "Missing Number", "difficulty": "easy", "topic": "arrays", "link": "https://leetcode.com/problems/missing-number" },
-      { "id": "dsa_b_16", "title": "Reverse String", "difficulty": "easy", "topic": "strings", "link": "https://leetcode.com/problems/reverse-string" },
-      { "id": "dsa_b_17", "title": "Move Zeroes", "difficulty": "easy", "topic": "arrays", "link": "https://leetcode.com/problems/move-zeroes" },
-      { "id": "dsa_b_18", "title": "Palindrome Number", "difficulty": "easy", "topic": "math", "link": "https://leetcode.com/problems/palindrome-number" },
-      { "id": "dsa_b_19", "title": "Roman to Integer", "difficulty": "easy", "topic": "strings", "link": "https://leetcode.com/problems/roman-to-integer" },
-      { "id": "dsa_b_20", "title": "Fizz Buzz", "difficulty": "easy", "topic": "math", "link": "https://leetcode.com/problems/fizz-buzz" }
+      {
+        "id": "dsa_b_1",
+        "title": "Two Sum",
+        "difficulty": "easy",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/two-sum"
+      },
+      {
+        "id": "dsa_b_2",
+        "title": "Best Time to Buy and Sell Stock",
+        "difficulty": "easy",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock"
+      },
+      {
+        "id": "dsa_b_3",
+        "title": "Contains Duplicate",
+        "difficulty": "easy",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/contains-duplicate"
+      },
+      {
+        "id": "dsa_b_4",
+        "title": "Maximum Subarray",
+        "difficulty": "medium",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/maximum-subarray"
+      },
+      {
+        "id": "dsa_b_5",
+        "title": "Valid Parentheses",
+        "difficulty": "easy",
+        "topic": "stacks",
+        "link": "https://leetcode.com/problems/valid-parentheses"
+      },
+      {
+        "id": "dsa_b_6",
+        "title": "Merge Two Sorted Lists",
+        "difficulty": "easy",
+        "topic": "linked-list",
+        "link": "https://leetcode.com/problems/merge-two-sorted-lists"
+      },
+      {
+        "id": "dsa_b_7",
+        "title": "Reverse Linked List",
+        "difficulty": "easy",
+        "topic": "linked-list",
+        "link": "https://leetcode.com/problems/reverse-linked-list"
+      },
+      {
+        "id": "dsa_b_8",
+        "title": "Valid Palindrome",
+        "difficulty": "easy",
+        "topic": "strings",
+        "link": "https://leetcode.com/problems/valid-palindrome"
+      },
+      {
+        "id": "dsa_b_9",
+        "title": "Binary Search",
+        "difficulty": "easy",
+        "topic": "binary-search",
+        "link": "https://leetcode.com/problems/binary-search"
+      },
+      {
+        "id": "dsa_b_10",
+        "title": "Climbing Stairs",
+        "difficulty": "easy",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/climbing-stairs"
+      },
+      {
+        "id": "dsa_b_11",
+        "title": "Invert Binary Tree",
+        "difficulty": "easy",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/invert-binary-tree"
+      },
+      {
+        "id": "dsa_b_12",
+        "title": "Maximum Depth of Binary Tree",
+        "difficulty": "easy",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/maximum-depth-of-binary-tree"
+      },
+      {
+        "id": "dsa_b_13",
+        "title": "Linked List Cycle",
+        "difficulty": "easy",
+        "topic": "linked-list",
+        "link": "https://leetcode.com/problems/linked-list-cycle"
+      },
+      {
+        "id": "dsa_b_14",
+        "title": "Single Number",
+        "difficulty": "easy",
+        "topic": "bit-manipulation",
+        "link": "https://leetcode.com/problems/single-number"
+      },
+      {
+        "id": "dsa_b_15",
+        "title": "Missing Number",
+        "difficulty": "easy",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/missing-number"
+      },
+      {
+        "id": "dsa_b_16",
+        "title": "Reverse String",
+        "difficulty": "easy",
+        "topic": "strings",
+        "link": "https://leetcode.com/problems/reverse-string"
+      },
+      {
+        "id": "dsa_b_17",
+        "title": "Move Zeroes",
+        "difficulty": "easy",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/move-zeroes"
+      },
+      {
+        "id": "dsa_b_18",
+        "title": "Palindrome Number",
+        "difficulty": "easy",
+        "topic": "math",
+        "link": "https://leetcode.com/problems/palindrome-number"
+      },
+      {
+        "id": "dsa_b_19",
+        "title": "Roman to Integer",
+        "difficulty": "easy",
+        "topic": "strings",
+        "link": "https://leetcode.com/problems/roman-to-integer"
+      },
+      {
+        "id": "dsa_b_20",
+        "title": "Fizz Buzz",
+        "difficulty": "easy",
+        "topic": "math",
+        "link": "https://leetcode.com/problems/fizz-buzz"
+      }
     ],
     "intermediate": [
-      { "id": "dsa_i_1", "title": "Product of Array Except Self", "difficulty": "medium", "topic": "arrays", "link": "https://leetcode.com/problems/product-of-array-except-self" },
-      { "id": "dsa_i_2", "title": "3Sum", "difficulty": "medium", "topic": "arrays", "link": "https://leetcode.com/problems/3sum" },
-      { "id": "dsa_i_3", "title": "Container With Most Water", "difficulty": "medium", "topic": "two-pointers", "link": "https://leetcode.com/problems/container-with-most-water" },
-      { "id": "dsa_i_4", "title": "Longest Substring Without Repeating Characters", "difficulty": "medium", "topic": "sliding-window", "link": "https://leetcode.com/problems/longest-substring-without-repeating-characters" },
-      { "id": "dsa_i_5", "title": "Group Anagrams", "difficulty": "medium", "topic": "hash-table", "link": "https://leetcode.com/problems/group-anagrams" },
-      { "id": "dsa_i_6", "title": "Top K Frequent Elements", "difficulty": "medium", "topic": "heap", "link": "https://leetcode.com/problems/top-k-frequent-elements" },
-      { "id": "dsa_i_7", "title": "Validate Binary Search Tree", "difficulty": "medium", "topic": "trees", "link": "https://leetcode.com/problems/validate-binary-search-tree" },
-      { "id": "dsa_i_8", "title": "Number of Islands", "difficulty": "medium", "topic": "graphs", "link": "https://leetcode.com/problems/number-of-islands" },
-      { "id": "dsa_i_9", "title": "Course Schedule", "difficulty": "medium", "topic": "graphs", "link": "https://leetcode.com/problems/course-schedule" },
-      { "id": "dsa_i_10", "title": "Coin Change", "difficulty": "medium", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/coin-change" },
-      { "id": "dsa_i_11", "title": "Longest Increasing Subsequence", "difficulty": "medium", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/longest-increasing-subsequence" },
-      { "id": "dsa_i_12", "title": "Implement Trie (Prefix Tree)", "difficulty": "medium", "topic": "trie", "link": "https://leetcode.com/problems/implement-trie-prefix-tree" },
-      { "id": "dsa_i_13", "title": "Rotate Image", "difficulty": "medium", "topic": "matrix", "link": "https://leetcode.com/problems/rotate-image" },
-      { "id": "dsa_i_14", "title": "Set Matrix Zeroes", "difficulty": "medium", "topic": "matrix", "link": "https://leetcode.com/problems/set-matrix-zeroes" },
-      { "id": "dsa_i_15", "title": "Word Search", "difficulty": "medium", "topic": "backtracking", "link": "https://leetcode.com/problems/word-search" },
-      { "id": "dsa_i_16", "title": "Subsets", "difficulty": "medium", "topic": "backtracking", "link": "https://leetcode.com/problems/subsets" },
-      { "id": "dsa_i_17", "title": "Combination Sum", "difficulty": "medium", "topic": "backtracking", "link": "https://leetcode.com/problems/combination-sum" },
-      { "id": "dsa_i_18", "title": "Kth Smallest Element in a BST", "difficulty": "medium", "topic": "trees", "link": "https://leetcode.com/problems/kth-smallest-element-in-a-bst" },
-      { "id": "dsa_i_19", "title": "Binary Tree Level Order Traversal", "difficulty": "medium", "topic": "trees", "link": "https://leetcode.com/problems/binary-tree-level-order-traversal" },
-      { "id": "dsa_i_20", "title": "Decode Ways", "difficulty": "medium", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/decode-ways" }
+      {
+        "id": "dsa_i_1",
+        "title": "Product of Array Except Self",
+        "difficulty": "medium",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/product-of-array-except-self"
+      },
+      {
+        "id": "dsa_i_2",
+        "title": "3Sum",
+        "difficulty": "medium",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/3sum"
+      },
+      {
+        "id": "dsa_i_3",
+        "title": "Container With Most Water",
+        "difficulty": "medium",
+        "topic": "two-pointers",
+        "link": "https://leetcode.com/problems/container-with-most-water"
+      },
+      {
+        "id": "dsa_i_4",
+        "title": "Longest Substring Without Repeating Characters",
+        "difficulty": "medium",
+        "topic": "sliding-window",
+        "link": "https://leetcode.com/problems/longest-substring-without-repeating-characters"
+      },
+      {
+        "id": "dsa_i_5",
+        "title": "Group Anagrams",
+        "difficulty": "medium",
+        "topic": "hash-table",
+        "link": "https://leetcode.com/problems/group-anagrams"
+      },
+      {
+        "id": "dsa_i_6",
+        "title": "Top K Frequent Elements",
+        "difficulty": "medium",
+        "topic": "heap",
+        "link": "https://leetcode.com/problems/top-k-frequent-elements"
+      },
+      {
+        "id": "dsa_i_7",
+        "title": "Validate Binary Search Tree",
+        "difficulty": "medium",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/validate-binary-search-tree"
+      },
+      {
+        "id": "dsa_i_8",
+        "title": "Number of Islands",
+        "difficulty": "medium",
+        "topic": "graphs",
+        "link": "https://leetcode.com/problems/number-of-islands"
+      },
+      {
+        "id": "dsa_i_9",
+        "title": "Course Schedule",
+        "difficulty": "medium",
+        "topic": "graphs",
+        "link": "https://leetcode.com/problems/course-schedule"
+      },
+      {
+        "id": "dsa_i_10",
+        "title": "Coin Change",
+        "difficulty": "medium",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/coin-change"
+      },
+      {
+        "id": "dsa_i_11",
+        "title": "Longest Increasing Subsequence",
+        "difficulty": "medium",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/longest-increasing-subsequence"
+      },
+      {
+        "id": "dsa_i_12",
+        "title": "Implement Trie (Prefix Tree)",
+        "difficulty": "medium",
+        "topic": "trie",
+        "link": "https://leetcode.com/problems/implement-trie-prefix-tree"
+      },
+      {
+        "id": "dsa_i_13",
+        "title": "Rotate Image",
+        "difficulty": "medium",
+        "topic": "matrix",
+        "link": "https://leetcode.com/problems/rotate-image"
+      },
+      {
+        "id": "dsa_i_14",
+        "title": "Set Matrix Zeroes",
+        "difficulty": "medium",
+        "topic": "matrix",
+        "link": "https://leetcode.com/problems/set-matrix-zeroes"
+      },
+      {
+        "id": "dsa_i_15",
+        "title": "Word Search",
+        "difficulty": "medium",
+        "topic": "backtracking",
+        "link": "https://leetcode.com/problems/word-search"
+      },
+      {
+        "id": "dsa_i_16",
+        "title": "Subsets",
+        "difficulty": "medium",
+        "topic": "backtracking",
+        "link": "https://leetcode.com/problems/subsets"
+      },
+      {
+        "id": "dsa_i_17",
+        "title": "Combination Sum",
+        "difficulty": "medium",
+        "topic": "backtracking",
+        "link": "https://leetcode.com/problems/combination-sum"
+      },
+      {
+        "id": "dsa_i_18",
+        "title": "Kth Smallest Element in a BST",
+        "difficulty": "medium",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/kth-smallest-element-in-a-bst"
+      },
+      {
+        "id": "dsa_i_19",
+        "title": "Binary Tree Level Order Traversal",
+        "difficulty": "medium",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/binary-tree-level-order-traversal"
+      },
+      {
+        "id": "dsa_i_20",
+        "title": "Decode Ways",
+        "difficulty": "medium",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/decode-ways"
+      }
     ],
     "advanced": [
-      { "id": "dsa_a_1", "title": "Trapping Rain Water", "difficulty": "hard", "topic": "arrays", "link": "https://leetcode.com/problems/trapping-rain-water" },
-      { "id": "dsa_a_2", "title": "Merge K Sorted Lists", "difficulty": "hard", "topic": "heap", "link": "https://leetcode.com/problems/merge-k-sorted-lists" },
-      { "id": "dsa_a_3", "title": "Median of Two Sorted Arrays", "difficulty": "hard", "topic": "binary-search", "link": "https://leetcode.com/problems/median-of-two-sorted-arrays" },
-      { "id": "dsa_a_4", "title": "Regular Expression Matching", "difficulty": "hard", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/regular-expression-matching" },
-      { "id": "dsa_a_5", "title": "Serialize and Deserialize Binary Tree", "difficulty": "hard", "topic": "trees", "link": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree" },
-      { "id": "dsa_a_6", "title": "Word Ladder", "difficulty": "hard", "topic": "graphs", "link": "https://leetcode.com/problems/word-ladder" },
-      { "id": "dsa_a_7", "title": "Alien Dictionary", "difficulty": "hard", "topic": "graphs", "link": "https://leetcode.com/problems/alien-dictionary" },
-      { "id": "dsa_a_8", "title": "Longest Valid Parentheses", "difficulty": "hard", "topic": "stacks", "link": "https://leetcode.com/problems/longest-valid-parentheses" },
-      { "id": "dsa_a_9", "title": "Minimum Window Substring", "difficulty": "hard", "topic": "sliding-window", "link": "https://leetcode.com/problems/minimum-window-substring" },
-      { "id": "dsa_a_10", "title": "Edit Distance", "difficulty": "hard", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/edit-distance" },
-      { "id": "dsa_a_11", "title": "Burst Balloons", "difficulty": "hard", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/burst-balloons" },
-      { "id": "dsa_a_12", "title": "N-Queens", "difficulty": "hard", "topic": "backtracking", "link": "https://leetcode.com/problems/n-queens" },
-      { "id": "dsa_a_13", "title": "Sliding Window Maximum", "difficulty": "hard", "topic": "deque", "link": "https://leetcode.com/problems/sliding-window-maximum" },
-      { "id": "dsa_a_14", "title": "Word Break II", "difficulty": "hard", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/word-break-ii" },
-      { "id": "dsa_a_15", "title": "Binary Tree Maximum Path Sum", "difficulty": "hard", "topic": "trees", "link": "https://leetcode.com/problems/binary-tree-maximum-path-sum" },
-      { "id": "dsa_a_16", "title": "LRU Cache", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/lru-cache" },
-      { "id": "dsa_a_17", "title": "Find Median from Data Stream", "difficulty": "hard", "topic": "heap", "link": "https://leetcode.com/problems/find-median-from-data-stream" },
-      { "id": "dsa_a_18", "title": "Largest Rectangle in Histogram", "difficulty": "hard", "topic": "stacks", "link": "https://leetcode.com/problems/largest-rectangle-in-histogram" },
-      { "id": "dsa_a_19", "title": "Count of Smaller Numbers After Self", "difficulty": "hard", "topic": "segment-tree", "link": "https://leetcode.com/problems/count-of-smaller-numbers-after-self" },
-      { "id": "dsa_a_20", "title": "Palindrome Pairs", "difficulty": "hard", "topic": "trie", "link": "https://leetcode.com/problems/palindrome-pairs" }
+      {
+        "id": "dsa_a_1",
+        "title": "Trapping Rain Water",
+        "difficulty": "hard",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/trapping-rain-water"
+      },
+      {
+        "id": "dsa_a_2",
+        "title": "Merge K Sorted Lists",
+        "difficulty": "hard",
+        "topic": "heap",
+        "link": "https://leetcode.com/problems/merge-k-sorted-lists"
+      },
+      {
+        "id": "dsa_a_3",
+        "title": "Median of Two Sorted Arrays",
+        "difficulty": "hard",
+        "topic": "binary-search",
+        "link": "https://leetcode.com/problems/median-of-two-sorted-arrays"
+      },
+      {
+        "id": "dsa_a_4",
+        "title": "Regular Expression Matching",
+        "difficulty": "hard",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/regular-expression-matching"
+      },
+      {
+        "id": "dsa_a_5",
+        "title": "Serialize and Deserialize Binary Tree",
+        "difficulty": "hard",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree"
+      },
+      {
+        "id": "dsa_a_6",
+        "title": "Word Ladder",
+        "difficulty": "hard",
+        "topic": "graphs",
+        "link": "https://leetcode.com/problems/word-ladder"
+      },
+      {
+        "id": "dsa_a_7",
+        "title": "Alien Dictionary",
+        "difficulty": "hard",
+        "topic": "graphs",
+        "link": "https://leetcode.com/problems/alien-dictionary"
+      },
+      {
+        "id": "dsa_a_8",
+        "title": "Longest Valid Parentheses",
+        "difficulty": "hard",
+        "topic": "stacks",
+        "link": "https://leetcode.com/problems/longest-valid-parentheses"
+      },
+      {
+        "id": "dsa_a_9",
+        "title": "Minimum Window Substring",
+        "difficulty": "hard",
+        "topic": "sliding-window",
+        "link": "https://leetcode.com/problems/minimum-window-substring"
+      },
+      {
+        "id": "dsa_a_10",
+        "title": "Edit Distance",
+        "difficulty": "hard",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/edit-distance"
+      },
+      {
+        "id": "dsa_a_11",
+        "title": "Burst Balloons",
+        "difficulty": "hard",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/burst-balloons"
+      },
+      {
+        "id": "dsa_a_12",
+        "title": "N-Queens",
+        "difficulty": "hard",
+        "topic": "backtracking",
+        "link": "https://leetcode.com/problems/n-queens"
+      },
+      {
+        "id": "dsa_a_13",
+        "title": "Sliding Window Maximum",
+        "difficulty": "hard",
+        "topic": "deque",
+        "link": "https://leetcode.com/problems/sliding-window-maximum"
+      },
+      {
+        "id": "dsa_a_14",
+        "title": "Word Break II",
+        "difficulty": "hard",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/word-break-ii"
+      },
+      {
+        "id": "dsa_a_15",
+        "title": "Binary Tree Maximum Path Sum",
+        "difficulty": "hard",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/binary-tree-maximum-path-sum"
+      },
+      {
+        "id": "dsa_a_16",
+        "title": "LRU Cache",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/lru-cache"
+      },
+      {
+        "id": "dsa_a_17",
+        "title": "Find Median from Data Stream",
+        "difficulty": "hard",
+        "topic": "heap",
+        "link": "https://leetcode.com/problems/find-median-from-data-stream"
+      },
+      {
+        "id": "dsa_a_18",
+        "title": "Largest Rectangle in Histogram",
+        "difficulty": "hard",
+        "topic": "stacks",
+        "link": "https://leetcode.com/problems/largest-rectangle-in-histogram"
+      },
+      {
+        "id": "dsa_a_19",
+        "title": "Count of Smaller Numbers After Self",
+        "difficulty": "hard",
+        "topic": "segment-tree",
+        "link": "https://leetcode.com/problems/count-of-smaller-numbers-after-self"
+      },
+      {
+        "id": "dsa_a_20",
+        "title": "Palindrome Pairs",
+        "difficulty": "hard",
+        "topic": "trie",
+        "link": "https://leetcode.com/problems/palindrome-pairs"
+      }
     ]
   },
   "interview": {
     "beginner": [
-      { "id": "int_b_1", "title": "Reverse a String", "difficulty": "easy", "topic": "strings", "link": "https://leetcode.com/problems/reverse-string" },
-      { "id": "int_b_2", "title": "Valid Anagram", "difficulty": "easy", "topic": "hash-table", "link": "https://leetcode.com/problems/valid-anagram" },
-      { "id": "int_b_3", "title": "First Unique Character in a String", "difficulty": "easy", "topic": "hash-table", "link": "https://leetcode.com/problems/first-unique-character-in-a-string" },
-      { "id": "int_b_4", "title": "Intersection of Two Arrays II", "difficulty": "easy", "topic": "arrays", "link": "https://leetcode.com/problems/intersection-of-two-arrays-ii" },
-      { "id": "int_b_5", "title": "Plus One", "difficulty": "easy", "topic": "arrays", "link": "https://leetcode.com/problems/plus-one" },
-      { "id": "int_b_6", "title": "Remove Duplicates from Sorted Array", "difficulty": "easy", "topic": "arrays", "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array" },
-      { "id": "int_b_7", "title": "Implement strStr()", "difficulty": "easy", "topic": "strings", "link": "https://leetcode.com/problems/implement-strstr" },
-      { "id": "int_b_8", "title": "Count and Say", "difficulty": "medium", "topic": "strings", "link": "https://leetcode.com/problems/count-and-say" },
-      { "id": "int_b_9", "title": "Longest Common Prefix", "difficulty": "easy", "topic": "strings", "link": "https://leetcode.com/problems/longest-common-prefix" },
-      { "id": "int_b_10", "title": "Power of Three", "difficulty": "easy", "topic": "math", "link": "https://leetcode.com/problems/power-of-three" },
-      { "id": "int_b_11", "title": "Symmetric Tree", "difficulty": "easy", "topic": "trees", "link": "https://leetcode.com/problems/symmetric-tree" },
-      { "id": "int_b_12", "title": "Min Stack", "difficulty": "medium", "topic": "stacks", "link": "https://leetcode.com/problems/min-stack" },
-      { "id": "int_b_13", "title": "Majority Element", "difficulty": "easy", "topic": "arrays", "link": "https://leetcode.com/problems/majority-element" },
-      { "id": "int_b_14", "title": "Excel Sheet Column Number", "difficulty": "easy", "topic": "math", "link": "https://leetcode.com/problems/excel-sheet-column-number" },
-      { "id": "int_b_15", "title": "Happy Number", "difficulty": "easy", "topic": "math", "link": "https://leetcode.com/problems/happy-number" },
-      { "id": "int_b_16", "title": "Sqrt(x)", "difficulty": "easy", "topic": "binary-search", "link": "https://leetcode.com/problems/sqrtx" },
-      { "id": "int_b_17", "title": "Pascal's Triangle", "difficulty": "easy", "topic": "arrays", "link": "https://leetcode.com/problems/pascals-triangle" },
-      { "id": "int_b_18", "title": "Merge Sorted Array", "difficulty": "easy", "topic": "arrays", "link": "https://leetcode.com/problems/merge-sorted-array" },
-      { "id": "int_b_19", "title": "Remove Element", "difficulty": "easy", "topic": "arrays", "link": "https://leetcode.com/problems/remove-element" },
-      { "id": "int_b_20", "title": "Search Insert Position", "difficulty": "easy", "topic": "binary-search", "link": "https://leetcode.com/problems/search-insert-position" }
+      {
+        "id": "int_b_1",
+        "title": "Reverse a String",
+        "difficulty": "easy",
+        "topic": "strings",
+        "link": "https://leetcode.com/problems/reverse-string"
+      },
+      {
+        "id": "int_b_2",
+        "title": "Valid Anagram",
+        "difficulty": "easy",
+        "topic": "hash-table",
+        "link": "https://leetcode.com/problems/valid-anagram"
+      },
+      {
+        "id": "int_b_3",
+        "title": "First Unique Character in a String",
+        "difficulty": "easy",
+        "topic": "hash-table",
+        "link": "https://leetcode.com/problems/first-unique-character-in-a-string"
+      },
+      {
+        "id": "int_b_4",
+        "title": "Intersection of Two Arrays II",
+        "difficulty": "easy",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/intersection-of-two-arrays-ii"
+      },
+      {
+        "id": "int_b_5",
+        "title": "Plus One",
+        "difficulty": "easy",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/plus-one"
+      },
+      {
+        "id": "int_b_6",
+        "title": "Remove Duplicates from Sorted Array",
+        "difficulty": "easy",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array"
+      },
+      {
+        "id": "int_b_7",
+        "title": "Implement strStr()",
+        "difficulty": "easy",
+        "topic": "strings",
+        "link": "https://leetcode.com/problems/implement-strstr"
+      },
+      {
+        "id": "int_b_8",
+        "title": "Count and Say",
+        "difficulty": "medium",
+        "topic": "strings",
+        "link": "https://leetcode.com/problems/count-and-say"
+      },
+      {
+        "id": "int_b_9",
+        "title": "Longest Common Prefix",
+        "difficulty": "easy",
+        "topic": "strings",
+        "link": "https://leetcode.com/problems/longest-common-prefix"
+      },
+      {
+        "id": "int_b_10",
+        "title": "Power of Three",
+        "difficulty": "easy",
+        "topic": "math",
+        "link": "https://leetcode.com/problems/power-of-three"
+      },
+      {
+        "id": "int_b_11",
+        "title": "Symmetric Tree",
+        "difficulty": "easy",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/symmetric-tree"
+      },
+      {
+        "id": "int_b_12",
+        "title": "Min Stack",
+        "difficulty": "medium",
+        "topic": "stacks",
+        "link": "https://leetcode.com/problems/min-stack"
+      },
+      {
+        "id": "int_b_13",
+        "title": "Majority Element",
+        "difficulty": "easy",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/majority-element"
+      },
+      {
+        "id": "int_b_14",
+        "title": "Excel Sheet Column Number",
+        "difficulty": "easy",
+        "topic": "math",
+        "link": "https://leetcode.com/problems/excel-sheet-column-number"
+      },
+      {
+        "id": "int_b_15",
+        "title": "Happy Number",
+        "difficulty": "easy",
+        "topic": "math",
+        "link": "https://leetcode.com/problems/happy-number"
+      },
+      {
+        "id": "int_b_16",
+        "title": "Sqrt(x)",
+        "difficulty": "easy",
+        "topic": "binary-search",
+        "link": "https://leetcode.com/problems/sqrtx"
+      },
+      {
+        "id": "int_b_17",
+        "title": "Pascal's Triangle",
+        "difficulty": "easy",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/pascals-triangle"
+      },
+      {
+        "id": "int_b_18",
+        "title": "Merge Sorted Array",
+        "difficulty": "easy",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/merge-sorted-array"
+      },
+      {
+        "id": "int_b_19",
+        "title": "Remove Element",
+        "difficulty": "easy",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/remove-element"
+      },
+      {
+        "id": "int_b_20",
+        "title": "Search Insert Position",
+        "difficulty": "easy",
+        "topic": "binary-search",
+        "link": "https://leetcode.com/problems/search-insert-position"
+      },
+      {
+        "id": "hr_1776254202624_0",
+        "title": "Tell me about your hobbies",
+        "difficulty": "easy",
+        "topic": "General",
+        "link": ""
+      },
+      {
+        "id": "hr_1776254202624_1",
+        "title": "Describe a situation where you disagreed with your team but agreed with them. What did you learn?",
+        "difficulty": "easy",
+        "topic": "Behavioral",
+        "link": ""
+      },
+      {
+        "id": "hr_1776254202624_2",
+        "title": "Why do you want to join TCS?",
+        "difficulty": "easy",
+        "topic": "Company Specific",
+        "link": ""
+      },
+      {
+        "id": "hr_1776254202624_3",
+        "title": "What do you value most about an organization?",
+        "difficulty": "easy",
+        "topic": "General",
+        "link": ""
+      },
+      {
+        "id": "hr_1776254202624_4",
+        "title": "If you receive offers from TCS and Google with similar compensation, which would you choose and why?",
+        "difficulty": "easy",
+        "topic": "Behavioral",
+        "link": ""
+      },
+      {
+        "id": "hr_1776254202624_5",
+        "title": "What do you prefer: hard work or smart work?",
+        "difficulty": "easy",
+        "topic": "General",
+        "link": ""
+      },
+      {
+        "id": "hr_1776254202624_6",
+        "title": "What are your strengths and weaknesses?",
+        "difficulty": "easy",
+        "topic": "General",
+        "link": ""
+      },
+      {
+        "id": "hr_1776254202624_7",
+        "title": "Are you willing to relocate or work in shifts?",
+        "difficulty": "easy",
+        "topic": "General",
+        "link": ""
+      }
     ],
     "intermediate": [
-      { "id": "int_i_1", "title": "Letter Combinations of a Phone Number", "difficulty": "medium", "topic": "backtracking", "link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number" },
-      { "id": "int_i_2", "title": "Generate Parentheses", "difficulty": "medium", "topic": "backtracking", "link": "https://leetcode.com/problems/generate-parentheses" },
-      { "id": "int_i_3", "title": "Merge Intervals", "difficulty": "medium", "topic": "intervals", "link": "https://leetcode.com/problems/merge-intervals" },
-      { "id": "int_i_4", "title": "Search in Rotated Sorted Array", "difficulty": "medium", "topic": "binary-search", "link": "https://leetcode.com/problems/search-in-rotated-sorted-array" },
-      { "id": "int_i_5", "title": "Sort Colors", "difficulty": "medium", "topic": "arrays", "link": "https://leetcode.com/problems/sort-colors" },
-      { "id": "int_i_6", "title": "Clone Graph", "difficulty": "medium", "topic": "graphs", "link": "https://leetcode.com/problems/clone-graph" },
-      { "id": "int_i_7", "title": "Lowest Common Ancestor of a BST", "difficulty": "medium", "topic": "trees", "link": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree" },
-      { "id": "int_i_8", "title": "Spiral Matrix", "difficulty": "medium", "topic": "matrix", "link": "https://leetcode.com/problems/spiral-matrix" },
-      { "id": "int_i_9", "title": "Unique Paths", "difficulty": "medium", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/unique-paths" },
-      { "id": "int_i_10", "title": "Jump Game", "difficulty": "medium", "topic": "greedy", "link": "https://leetcode.com/problems/jump-game" },
-      { "id": "int_i_11", "title": "Permutations", "difficulty": "medium", "topic": "backtracking", "link": "https://leetcode.com/problems/permutations" },
-      { "id": "int_i_12", "title": "House Robber", "difficulty": "medium", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/house-robber" },
-      { "id": "int_i_13", "title": "Maximum Product Subarray", "difficulty": "medium", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/maximum-product-subarray" },
-      { "id": "int_i_14", "title": "Find Minimum in Rotated Sorted Array", "difficulty": "medium", "topic": "binary-search", "link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array" },
-      { "id": "int_i_15", "title": "Task Scheduler", "difficulty": "medium", "topic": "greedy", "link": "https://leetcode.com/problems/task-scheduler" },
-      { "id": "int_i_16", "title": "Construct Binary Tree from Preorder and Inorder", "difficulty": "medium", "topic": "trees", "link": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal" },
-      { "id": "int_i_17", "title": "Populating Next Right Pointers", "difficulty": "medium", "topic": "trees", "link": "https://leetcode.com/problems/populating-next-right-pointers-in-each-node" },
-      { "id": "int_i_18", "title": "String to Integer (atoi)", "difficulty": "medium", "topic": "strings", "link": "https://leetcode.com/problems/string-to-integer-atoi" },
-      { "id": "int_i_19", "title": "Longest Palindromic Substring", "difficulty": "medium", "topic": "strings", "link": "https://leetcode.com/problems/longest-palindromic-substring" },
-      { "id": "int_i_20", "title": "Evaluate Reverse Polish Notation", "difficulty": "medium", "topic": "stacks", "link": "https://leetcode.com/problems/evaluate-reverse-polish-notation" }
+      {
+        "id": "int_i_1",
+        "title": "Letter Combinations of a Phone Number",
+        "difficulty": "medium",
+        "topic": "backtracking",
+        "link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number"
+      },
+      {
+        "id": "int_i_2",
+        "title": "Generate Parentheses",
+        "difficulty": "medium",
+        "topic": "backtracking",
+        "link": "https://leetcode.com/problems/generate-parentheses"
+      },
+      {
+        "id": "int_i_3",
+        "title": "Merge Intervals",
+        "difficulty": "medium",
+        "topic": "intervals",
+        "link": "https://leetcode.com/problems/merge-intervals"
+      },
+      {
+        "id": "int_i_4",
+        "title": "Search in Rotated Sorted Array",
+        "difficulty": "medium",
+        "topic": "binary-search",
+        "link": "https://leetcode.com/problems/search-in-rotated-sorted-array"
+      },
+      {
+        "id": "int_i_5",
+        "title": "Sort Colors",
+        "difficulty": "medium",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/sort-colors"
+      },
+      {
+        "id": "int_i_6",
+        "title": "Clone Graph",
+        "difficulty": "medium",
+        "topic": "graphs",
+        "link": "https://leetcode.com/problems/clone-graph"
+      },
+      {
+        "id": "int_i_7",
+        "title": "Lowest Common Ancestor of a BST",
+        "difficulty": "medium",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree"
+      },
+      {
+        "id": "int_i_8",
+        "title": "Spiral Matrix",
+        "difficulty": "medium",
+        "topic": "matrix",
+        "link": "https://leetcode.com/problems/spiral-matrix"
+      },
+      {
+        "id": "int_i_9",
+        "title": "Unique Paths",
+        "difficulty": "medium",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/unique-paths"
+      },
+      {
+        "id": "int_i_10",
+        "title": "Jump Game",
+        "difficulty": "medium",
+        "topic": "greedy",
+        "link": "https://leetcode.com/problems/jump-game"
+      },
+      {
+        "id": "int_i_11",
+        "title": "Permutations",
+        "difficulty": "medium",
+        "topic": "backtracking",
+        "link": "https://leetcode.com/problems/permutations"
+      },
+      {
+        "id": "int_i_12",
+        "title": "House Robber",
+        "difficulty": "medium",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/house-robber"
+      },
+      {
+        "id": "int_i_13",
+        "title": "Maximum Product Subarray",
+        "difficulty": "medium",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/maximum-product-subarray"
+      },
+      {
+        "id": "int_i_14",
+        "title": "Find Minimum in Rotated Sorted Array",
+        "difficulty": "medium",
+        "topic": "binary-search",
+        "link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array"
+      },
+      {
+        "id": "int_i_15",
+        "title": "Task Scheduler",
+        "difficulty": "medium",
+        "topic": "greedy",
+        "link": "https://leetcode.com/problems/task-scheduler"
+      },
+      {
+        "id": "int_i_16",
+        "title": "Construct Binary Tree from Preorder and Inorder",
+        "difficulty": "medium",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal"
+      },
+      {
+        "id": "int_i_17",
+        "title": "Populating Next Right Pointers",
+        "difficulty": "medium",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/populating-next-right-pointers-in-each-node"
+      },
+      {
+        "id": "int_i_18",
+        "title": "String to Integer (atoi)",
+        "difficulty": "medium",
+        "topic": "strings",
+        "link": "https://leetcode.com/problems/string-to-integer-atoi"
+      },
+      {
+        "id": "int_i_19",
+        "title": "Longest Palindromic Substring",
+        "difficulty": "medium",
+        "topic": "strings",
+        "link": "https://leetcode.com/problems/longest-palindromic-substring"
+      },
+      {
+        "id": "int_i_20",
+        "title": "Evaluate Reverse Polish Notation",
+        "difficulty": "medium",
+        "topic": "stacks",
+        "link": "https://leetcode.com/problems/evaluate-reverse-polish-notation"
+      },
+      {
+        "id": "tech_1776254202624_0",
+        "title": "Draw your project flowchart and explain it",
+        "difficulty": "medium",
+        "topic": "Architecture",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_1",
+        "title": "Write a program to check whether a number or string is a palindrome",
+        "difficulty": "medium",
+        "topic": "Coding",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_2",
+        "title": "What is Dependency Injection?",
+        "difficulty": "medium",
+        "topic": "Concepts",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_3",
+        "title": "What are the advantages of Spring Boot?",
+        "difficulty": "medium",
+        "topic": "Spring Boot",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_4",
+        "title": "In which data format does the backend send responses?",
+        "difficulty": "medium",
+        "topic": "Web",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_5",
+        "title": "Explain the different types of HTTP status codes",
+        "difficulty": "medium",
+        "topic": "Web",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_7",
+        "title": "What is the difference between throw and throws keywords?",
+        "difficulty": "medium",
+        "topic": "Java",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_8",
+        "title": "What is the difference between final, finally, and finalize?",
+        "difficulty": "medium",
+        "topic": "Java",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_9",
+        "title": "What happens if we remove the static keyword from the main method in Java?",
+        "difficulty": "medium",
+        "topic": "Java",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_10",
+        "title": "Can we overload the main method in Java?",
+        "difficulty": "medium",
+        "topic": "Java",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_11",
+        "title": "What is polymorphism?",
+        "difficulty": "medium",
+        "topic": "OOPs",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_12",
+        "title": "What is inheritance?",
+        "difficulty": "medium",
+        "topic": "OOPs",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_13",
+        "title": "What are the similarities and differences between polymorphism and inheritance?",
+        "difficulty": "medium",
+        "topic": "OOPs",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_14",
+        "title": "What is encapsulation?",
+        "difficulty": "medium",
+        "topic": "OOPs",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_15",
+        "title": "What is method overloading?",
+        "difficulty": "medium",
+        "topic": "OOPs",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_16",
+        "title": "What is exception handling? What is try catch?",
+        "difficulty": "medium",
+        "topic": "OOPs",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_17",
+        "title": "What is the difference between extend(), append(), and insert() in Python?",
+        "difficulty": "medium",
+        "topic": "Python",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_18",
+        "title": "Count the number of words in a given string (coding)",
+        "difficulty": "medium",
+        "topic": "Coding",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_20",
+        "title": "What is cloud computing?",
+        "difficulty": "medium",
+        "topic": "Cloud",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_22",
+        "title": "What is Azure? What are virtual machines?",
+        "difficulty": "medium",
+        "topic": "Cloud",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_23",
+        "title": "What is IAAS, PAAS and SAAS?",
+        "difficulty": "medium",
+        "topic": "Cloud",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_24",
+        "title": "Swap two variables without using a third variable",
+        "difficulty": "medium",
+        "topic": "Coding",
+        "link": ""
+      }
     ],
     "advanced": [
-      { "id": "int_a_1", "title": "Maximal Rectangle", "difficulty": "hard", "topic": "stacks", "link": "https://leetcode.com/problems/maximal-rectangle" },
-      { "id": "int_a_2", "title": "Wildcard Matching", "difficulty": "hard", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/wildcard-matching" },
-      { "id": "int_a_3", "title": "Candy", "difficulty": "hard", "topic": "greedy", "link": "https://leetcode.com/problems/candy" },
-      { "id": "int_a_4", "title": "Word Search II", "difficulty": "hard", "topic": "trie", "link": "https://leetcode.com/problems/word-search-ii" },
-      { "id": "int_a_5", "title": "Basic Calculator", "difficulty": "hard", "topic": "stacks", "link": "https://leetcode.com/problems/basic-calculator" },
-      { "id": "int_a_6", "title": "Reverse Nodes in k-Group", "difficulty": "hard", "topic": "linked-list", "link": "https://leetcode.com/problems/reverse-nodes-in-k-group" },
-      { "id": "int_a_7", "title": "Sudoku Solver", "difficulty": "hard", "topic": "backtracking", "link": "https://leetcode.com/problems/sudoku-solver" },
-      { "id": "int_a_8", "title": "First Missing Positive", "difficulty": "hard", "topic": "arrays", "link": "https://leetcode.com/problems/first-missing-positive" },
-      { "id": "int_a_9", "title": "Text Justification", "difficulty": "hard", "topic": "strings", "link": "https://leetcode.com/problems/text-justification" },
-      { "id": "int_a_10", "title": "Minimum Path Sum", "difficulty": "medium", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/minimum-path-sum" },
-      { "id": "int_a_11", "title": "Number of Digit One", "difficulty": "hard", "topic": "math", "link": "https://leetcode.com/problems/number-of-digit-one" },
-      { "id": "int_a_12", "title": "Distinct Subsequences", "difficulty": "hard", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/distinct-subsequences" },
-      { "id": "int_a_13", "title": "Scramble String", "difficulty": "hard", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/scramble-string" },
-      { "id": "int_a_14", "title": "Maximum Gap", "difficulty": "hard", "topic": "sorting", "link": "https://leetcode.com/problems/maximum-gap" },
-      { "id": "int_a_15", "title": "Longest Consecutive Sequence", "difficulty": "medium", "topic": "hash-table", "link": "https://leetcode.com/problems/longest-consecutive-sequence" },
-      { "id": "int_a_16", "title": "Interleaving String", "difficulty": "medium", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/interleaving-string" },
-      { "id": "int_a_17", "title": "Recover Binary Search Tree", "difficulty": "medium", "topic": "trees", "link": "https://leetcode.com/problems/recover-binary-search-tree" },
-      { "id": "int_a_18", "title": "Word Ladder II", "difficulty": "hard", "topic": "graphs", "link": "https://leetcode.com/problems/word-ladder-ii" },
-      { "id": "int_a_19", "title": "Dungeon Game", "difficulty": "hard", "topic": "dynamic-programming", "link": "https://leetcode.com/problems/dungeon-game" },
-      { "id": "int_a_20", "title": "Shortest Palindrome", "difficulty": "hard", "topic": "strings", "link": "https://leetcode.com/problems/shortest-palindrome" }
+      {
+        "id": "int_a_1",
+        "title": "Maximal Rectangle",
+        "difficulty": "hard",
+        "topic": "stacks",
+        "link": "https://leetcode.com/problems/maximal-rectangle"
+      },
+      {
+        "id": "int_a_2",
+        "title": "Wildcard Matching",
+        "difficulty": "hard",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/wildcard-matching"
+      },
+      {
+        "id": "int_a_3",
+        "title": "Candy",
+        "difficulty": "hard",
+        "topic": "greedy",
+        "link": "https://leetcode.com/problems/candy"
+      },
+      {
+        "id": "int_a_4",
+        "title": "Word Search II",
+        "difficulty": "hard",
+        "topic": "trie",
+        "link": "https://leetcode.com/problems/word-search-ii"
+      },
+      {
+        "id": "int_a_5",
+        "title": "Basic Calculator",
+        "difficulty": "hard",
+        "topic": "stacks",
+        "link": "https://leetcode.com/problems/basic-calculator"
+      },
+      {
+        "id": "int_a_6",
+        "title": "Reverse Nodes in k-Group",
+        "difficulty": "hard",
+        "topic": "linked-list",
+        "link": "https://leetcode.com/problems/reverse-nodes-in-k-group"
+      },
+      {
+        "id": "int_a_7",
+        "title": "Sudoku Solver",
+        "difficulty": "hard",
+        "topic": "backtracking",
+        "link": "https://leetcode.com/problems/sudoku-solver"
+      },
+      {
+        "id": "int_a_8",
+        "title": "First Missing Positive",
+        "difficulty": "hard",
+        "topic": "arrays",
+        "link": "https://leetcode.com/problems/first-missing-positive"
+      },
+      {
+        "id": "int_a_9",
+        "title": "Text Justification",
+        "difficulty": "hard",
+        "topic": "strings",
+        "link": "https://leetcode.com/problems/text-justification"
+      },
+      {
+        "id": "int_a_10",
+        "title": "Minimum Path Sum",
+        "difficulty": "medium",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/minimum-path-sum"
+      },
+      {
+        "id": "int_a_11",
+        "title": "Number of Digit One",
+        "difficulty": "hard",
+        "topic": "math",
+        "link": "https://leetcode.com/problems/number-of-digit-one"
+      },
+      {
+        "id": "int_a_12",
+        "title": "Distinct Subsequences",
+        "difficulty": "hard",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/distinct-subsequences"
+      },
+      {
+        "id": "int_a_13",
+        "title": "Scramble String",
+        "difficulty": "hard",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/scramble-string"
+      },
+      {
+        "id": "int_a_14",
+        "title": "Maximum Gap",
+        "difficulty": "hard",
+        "topic": "sorting",
+        "link": "https://leetcode.com/problems/maximum-gap"
+      },
+      {
+        "id": "int_a_15",
+        "title": "Longest Consecutive Sequence",
+        "difficulty": "medium",
+        "topic": "hash-table",
+        "link": "https://leetcode.com/problems/longest-consecutive-sequence"
+      },
+      {
+        "id": "int_a_16",
+        "title": "Interleaving String",
+        "difficulty": "medium",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/interleaving-string"
+      },
+      {
+        "id": "int_a_17",
+        "title": "Recover Binary Search Tree",
+        "difficulty": "medium",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/recover-binary-search-tree"
+      },
+      {
+        "id": "int_a_18",
+        "title": "Word Ladder II",
+        "difficulty": "hard",
+        "topic": "graphs",
+        "link": "https://leetcode.com/problems/word-ladder-ii"
+      },
+      {
+        "id": "int_a_19",
+        "title": "Dungeon Game",
+        "difficulty": "hard",
+        "topic": "dynamic-programming",
+        "link": "https://leetcode.com/problems/dungeon-game"
+      },
+      {
+        "id": "int_a_20",
+        "title": "Shortest Palindrome",
+        "difficulty": "hard",
+        "topic": "strings",
+        "link": "https://leetcode.com/problems/shortest-palindrome"
+      },
+      {
+        "id": "tech_1776254202624_6",
+        "title": "How can you implement multithreading in Java?",
+        "difficulty": "hard",
+        "topic": "Java",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_19",
+        "title": "What are the layers of the OSI model?",
+        "difficulty": "hard",
+        "topic": "Networking",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_21",
+        "title": "What is load balancing?",
+        "difficulty": "hard",
+        "topic": "Cloud",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_25",
+        "title": "What is graph traversal? Explain BFS and DFS",
+        "difficulty": "hard",
+        "topic": "DSA",
+        "link": ""
+      },
+      {
+        "id": "tech_1776254202624_26",
+        "title": "Write code for graph traversal",
+        "difficulty": "hard",
+        "topic": "DSA",
+        "link": ""
+      }
     ]
   },
   "system_design": {
     "beginner": [
-      { "id": "sd_b_1", "title": "Design URL Shortener", "difficulty": "easy", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124658/Design-a-URL-Shortener" },
-      { "id": "sd_b_2", "title": "Design Parking Lot", "difficulty": "easy", "topic": "oop-design", "link": "https://leetcode.com/discuss/interview-question/object-oriented-design/124862/Design-Parking-Lot" },
-      { "id": "sd_b_3", "title": "Design HashMap", "difficulty": "easy", "topic": "design", "link": "https://leetcode.com/problems/design-hashmap" },
-      { "id": "sd_b_4", "title": "Design HashSet", "difficulty": "easy", "topic": "design", "link": "https://leetcode.com/problems/design-hashset" },
-      { "id": "sd_b_5", "title": "Design Stack Using Queues", "difficulty": "easy", "topic": "design", "link": "https://leetcode.com/problems/implement-stack-using-queues" },
-      { "id": "sd_b_6", "title": "Design Queue Using Stacks", "difficulty": "easy", "topic": "design", "link": "https://leetcode.com/problems/implement-queue-using-stacks" },
-      { "id": "sd_b_7", "title": "Design Linked List", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/design-linked-list" },
-      { "id": "sd_b_8", "title": "Design Browser History", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/design-browser-history" },
-      { "id": "sd_b_9", "title": "Design Circular Queue", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/design-circular-queue" },
-      { "id": "sd_b_10", "title": "Design Underground System", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/design-underground-system" },
-      { "id": "sd_b_11", "title": "Design Log Storage System", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/design-log-storage-system" },
-      { "id": "sd_b_12", "title": "Design Hit Counter", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/design-hit-counter" },
-      { "id": "sd_b_13", "title": "Design Phone Directory", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/design-phone-directory" },
-      { "id": "sd_b_14", "title": "Design Tic-Tac-Toe", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/design-tic-tac-toe" },
-      { "id": "sd_b_15", "title": "Flatten Nested List Iterator", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/flatten-nested-list-iterator" },
-      { "id": "sd_b_16", "title": "Design Rate Limiter", "difficulty": "easy", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124558/Design-Rate-Limiter" },
-      { "id": "sd_b_17", "title": "Design Key-Value Store", "difficulty": "easy", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124803/Design-a-Key-Value-Store" },
-      { "id": "sd_b_18", "title": "Iterator for Combination", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/iterator-for-combination" },
-      { "id": "sd_b_19", "title": "Peeking Iterator", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/peeking-iterator" },
-      { "id": "sd_b_20", "title": "Design Compressed String Iterator", "difficulty": "easy", "topic": "design", "link": "https://leetcode.com/problems/design-compressed-string-iterator" }
+      {
+        "id": "sd_b_1",
+        "title": "Design URL Shortener",
+        "difficulty": "easy",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124658/Design-a-URL-Shortener"
+      },
+      {
+        "id": "sd_b_2",
+        "title": "Design Parking Lot",
+        "difficulty": "easy",
+        "topic": "oop-design",
+        "link": "https://leetcode.com/discuss/interview-question/object-oriented-design/124862/Design-Parking-Lot"
+      },
+      {
+        "id": "sd_b_3",
+        "title": "Design HashMap",
+        "difficulty": "easy",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-hashmap"
+      },
+      {
+        "id": "sd_b_4",
+        "title": "Design HashSet",
+        "difficulty": "easy",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-hashset"
+      },
+      {
+        "id": "sd_b_5",
+        "title": "Design Stack Using Queues",
+        "difficulty": "easy",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/implement-stack-using-queues"
+      },
+      {
+        "id": "sd_b_6",
+        "title": "Design Queue Using Stacks",
+        "difficulty": "easy",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/implement-queue-using-stacks"
+      },
+      {
+        "id": "sd_b_7",
+        "title": "Design Linked List",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-linked-list"
+      },
+      {
+        "id": "sd_b_8",
+        "title": "Design Browser History",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-browser-history"
+      },
+      {
+        "id": "sd_b_9",
+        "title": "Design Circular Queue",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-circular-queue"
+      },
+      {
+        "id": "sd_b_10",
+        "title": "Design Underground System",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-underground-system"
+      },
+      {
+        "id": "sd_b_11",
+        "title": "Design Log Storage System",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-log-storage-system"
+      },
+      {
+        "id": "sd_b_12",
+        "title": "Design Hit Counter",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-hit-counter"
+      },
+      {
+        "id": "sd_b_13",
+        "title": "Design Phone Directory",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-phone-directory"
+      },
+      {
+        "id": "sd_b_14",
+        "title": "Design Tic-Tac-Toe",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-tic-tac-toe"
+      },
+      {
+        "id": "sd_b_15",
+        "title": "Flatten Nested List Iterator",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/flatten-nested-list-iterator"
+      },
+      {
+        "id": "sd_b_16",
+        "title": "Design Rate Limiter",
+        "difficulty": "easy",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124558/Design-Rate-Limiter"
+      },
+      {
+        "id": "sd_b_17",
+        "title": "Design Key-Value Store",
+        "difficulty": "easy",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124803/Design-a-Key-Value-Store"
+      },
+      {
+        "id": "sd_b_18",
+        "title": "Iterator for Combination",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/iterator-for-combination"
+      },
+      {
+        "id": "sd_b_19",
+        "title": "Peeking Iterator",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/peeking-iterator"
+      },
+      {
+        "id": "sd_b_20",
+        "title": "Design Compressed String Iterator",
+        "difficulty": "easy",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-compressed-string-iterator"
+      }
     ],
     "intermediate": [
-      { "id": "sd_i_1", "title": "Design Twitter", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/design-twitter" },
-      { "id": "sd_i_2", "title": "Design Add and Search Words", "difficulty": "medium", "topic": "trie", "link": "https://leetcode.com/problems/design-add-and-search-words-data-structure" },
-      { "id": "sd_i_3", "title": "Design File System", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/design-file-system" },
-      { "id": "sd_i_4", "title": "Design Snake Game", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/design-snake-game" },
-      { "id": "sd_i_5", "title": "LRU Cache", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/lru-cache" },
-      { "id": "sd_i_6", "title": "Insert Delete GetRandom O(1)", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/insert-delete-getrandom-o1" },
-      { "id": "sd_i_7", "title": "Serialize and Deserialize BST", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/serialize-and-deserialize-bst" },
-      { "id": "sd_i_8", "title": "Design Notification System", "difficulty": "medium", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124556/Design-Notification-System" },
-      { "id": "sd_i_9", "title": "Design Chat System", "difficulty": "medium", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124559/Design-a-Chat-System" },
-      { "id": "sd_i_10", "title": "Design Newsfeed System", "difficulty": "medium", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124804/Design-News-Feed" },
-      { "id": "sd_i_11", "title": "Time Based Key-Value Store", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/time-based-key-value-store" },
-      { "id": "sd_i_12", "title": "Design Circular Deque", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/design-circular-deque" },
-      { "id": "sd_i_13", "title": "Encode and Decode TinyURL", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/encode-and-decode-tinyurl" },
-      { "id": "sd_i_14", "title": "Design Search Autocomplete", "difficulty": "hard", "topic": "design", "link": "https://leetcode.com/problems/design-search-autocomplete-system" },
-      { "id": "sd_i_15", "title": "Online Stock Span", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/online-stock-span" },
-      { "id": "sd_i_16", "title": "Design Cache System", "difficulty": "medium", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124555/Design-Cache-System" },
-      { "id": "sd_i_17", "title": "Design Load Balancer", "difficulty": "medium", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124557/Design-a-Load-Balancer" },
-      { "id": "sd_i_18", "title": "Snapshot Array", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/snapshot-array" },
-      { "id": "sd_i_19", "title": "Design Skiplist", "difficulty": "hard", "topic": "design", "link": "https://leetcode.com/problems/design-skiplist" },
-      { "id": "sd_i_20", "title": "Stock Price Fluctuation", "difficulty": "medium", "topic": "design", "link": "https://leetcode.com/problems/stock-price-fluctuation" }
+      {
+        "id": "sd_i_1",
+        "title": "Design Twitter",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-twitter"
+      },
+      {
+        "id": "sd_i_2",
+        "title": "Design Add and Search Words",
+        "difficulty": "medium",
+        "topic": "trie",
+        "link": "https://leetcode.com/problems/design-add-and-search-words-data-structure"
+      },
+      {
+        "id": "sd_i_3",
+        "title": "Design File System",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-file-system"
+      },
+      {
+        "id": "sd_i_4",
+        "title": "Design Snake Game",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-snake-game"
+      },
+      {
+        "id": "sd_i_5",
+        "title": "LRU Cache",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/lru-cache"
+      },
+      {
+        "id": "sd_i_6",
+        "title": "Insert Delete GetRandom O(1)",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/insert-delete-getrandom-o1"
+      },
+      {
+        "id": "sd_i_7",
+        "title": "Serialize and Deserialize BST",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/serialize-and-deserialize-bst"
+      },
+      {
+        "id": "sd_i_8",
+        "title": "Design Notification System",
+        "difficulty": "medium",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124556/Design-Notification-System"
+      },
+      {
+        "id": "sd_i_9",
+        "title": "Design Chat System",
+        "difficulty": "medium",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124559/Design-a-Chat-System"
+      },
+      {
+        "id": "sd_i_10",
+        "title": "Design Newsfeed System",
+        "difficulty": "medium",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124804/Design-News-Feed"
+      },
+      {
+        "id": "sd_i_11",
+        "title": "Time Based Key-Value Store",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/time-based-key-value-store"
+      },
+      {
+        "id": "sd_i_12",
+        "title": "Design Circular Deque",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-circular-deque"
+      },
+      {
+        "id": "sd_i_13",
+        "title": "Encode and Decode TinyURL",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/encode-and-decode-tinyurl"
+      },
+      {
+        "id": "sd_i_14",
+        "title": "Design Search Autocomplete",
+        "difficulty": "hard",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-search-autocomplete-system"
+      },
+      {
+        "id": "sd_i_15",
+        "title": "Online Stock Span",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/online-stock-span"
+      },
+      {
+        "id": "sd_i_16",
+        "title": "Design Cache System",
+        "difficulty": "medium",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124555/Design-Cache-System"
+      },
+      {
+        "id": "sd_i_17",
+        "title": "Design Load Balancer",
+        "difficulty": "medium",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124557/Design-a-Load-Balancer"
+      },
+      {
+        "id": "sd_i_18",
+        "title": "Snapshot Array",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/snapshot-array"
+      },
+      {
+        "id": "sd_i_19",
+        "title": "Design Skiplist",
+        "difficulty": "hard",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-skiplist"
+      },
+      {
+        "id": "sd_i_20",
+        "title": "Stock Price Fluctuation",
+        "difficulty": "medium",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/stock-price-fluctuation"
+      },
+      {
+        "id": "sysdes_1776254202624_2",
+        "title": "Write SQL query to find highest salary from a table",
+        "difficulty": "medium",
+        "topic": "SQL",
+        "link": ""
+      },
+      {
+        "id": "sysdes_1776254202624_3",
+        "title": "Write SQL query to find second highest salary",
+        "difficulty": "medium",
+        "topic": "SQL",
+        "link": ""
+      },
+      {
+        "id": "sysdes_1776254202624_4",
+        "title": "Write SQL queries for Full Join, Right Join, and Self Join",
+        "difficulty": "medium",
+        "topic": "SQL",
+        "link": ""
+      },
+      {
+        "id": "sysdes_1776254202624_5",
+        "title": "How do you retrieve data from MongoDB?",
+        "difficulty": "medium",
+        "topic": "MongoDB",
+        "link": ""
+      }
     ],
     "advanced": [
-      { "id": "sd_a_1", "title": "LFU Cache", "difficulty": "hard", "topic": "design", "link": "https://leetcode.com/problems/lfu-cache" },
-      { "id": "sd_a_2", "title": "Design In-Memory File System", "difficulty": "hard", "topic": "design", "link": "https://leetcode.com/problems/design-in-memory-file-system" },
-      { "id": "sd_a_3", "title": "All O'one Data Structure", "difficulty": "hard", "topic": "design", "link": "https://leetcode.com/problems/all-oone-data-structure" },
-      { "id": "sd_a_4", "title": "Design YouTube", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124565/Design-YouTube" },
-      { "id": "sd_a_5", "title": "Design Google Maps", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124566/Design-Google-Maps" },
-      { "id": "sd_a_6", "title": "Design Uber", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124567/Design-Uber" },
-      { "id": "sd_a_7", "title": "Design Instagram", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124658/Design-Instagram" },
-      { "id": "sd_a_8", "title": "Design WhatsApp", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124569/Design-WhatsApp" },
-      { "id": "sd_a_9", "title": "Design Distributed Message Queue", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124570/Design-Message-Queue" },
-      { "id": "sd_a_10", "title": "Design Typeahead Suggestion", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124571/Design-Typeahead" },
-      { "id": "sd_a_11", "title": "Max Stack", "difficulty": "hard", "topic": "design", "link": "https://leetcode.com/problems/max-stack" },
-      { "id": "sd_a_12", "title": "Design Excel Sum Formula", "difficulty": "hard", "topic": "design", "link": "https://leetcode.com/problems/design-excel-sum-formula" },
-      { "id": "sd_a_13", "title": "Design Search Engine", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124572/Design-Search-Engine" },
-      { "id": "sd_a_14", "title": "Design Distributed Lock", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124573/Design-Distributed-Lock" },
-      { "id": "sd_a_15", "title": "Design Netflix", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124574/Design-Netflix" },
-      { "id": "sd_a_16", "title": "Design Ticketmaster", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124575/Design-Ticketmaster" },
-      { "id": "sd_a_17", "title": "Design Spotify", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124576/Design-Spotify" },
-      { "id": "sd_a_18", "title": "Design Dropbox", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124577/Design-Dropbox" },
-      { "id": "sd_a_19", "title": "Design Amazon", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124578/Design-Amazon" },
-      { "id": "sd_a_20", "title": "Design Twitter Search", "difficulty": "hard", "topic": "system-design", "link": "https://leetcode.com/discuss/interview-question/system-design/124579/Design-Twitter-Search" }
+      {
+        "id": "sd_a_1",
+        "title": "LFU Cache",
+        "difficulty": "hard",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/lfu-cache"
+      },
+      {
+        "id": "sd_a_2",
+        "title": "Design In-Memory File System",
+        "difficulty": "hard",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-in-memory-file-system"
+      },
+      {
+        "id": "sd_a_3",
+        "title": "All O'one Data Structure",
+        "difficulty": "hard",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/all-oone-data-structure"
+      },
+      {
+        "id": "sd_a_4",
+        "title": "Design YouTube",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124565/Design-YouTube"
+      },
+      {
+        "id": "sd_a_5",
+        "title": "Design Google Maps",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124566/Design-Google-Maps"
+      },
+      {
+        "id": "sd_a_6",
+        "title": "Design Uber",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124567/Design-Uber"
+      },
+      {
+        "id": "sd_a_7",
+        "title": "Design Instagram",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124658/Design-Instagram"
+      },
+      {
+        "id": "sd_a_8",
+        "title": "Design WhatsApp",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124569/Design-WhatsApp"
+      },
+      {
+        "id": "sd_a_9",
+        "title": "Design Distributed Message Queue",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124570/Design-Message-Queue"
+      },
+      {
+        "id": "sd_a_10",
+        "title": "Design Typeahead Suggestion",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124571/Design-Typeahead"
+      },
+      {
+        "id": "sd_a_11",
+        "title": "Max Stack",
+        "difficulty": "hard",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/max-stack"
+      },
+      {
+        "id": "sd_a_12",
+        "title": "Design Excel Sum Formula",
+        "difficulty": "hard",
+        "topic": "design",
+        "link": "https://leetcode.com/problems/design-excel-sum-formula"
+      },
+      {
+        "id": "sd_a_13",
+        "title": "Design Search Engine",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124572/Design-Search-Engine"
+      },
+      {
+        "id": "sd_a_14",
+        "title": "Design Distributed Lock",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124573/Design-Distributed-Lock"
+      },
+      {
+        "id": "sd_a_15",
+        "title": "Design Netflix",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124574/Design-Netflix"
+      },
+      {
+        "id": "sd_a_16",
+        "title": "Design Ticketmaster",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124575/Design-Ticketmaster"
+      },
+      {
+        "id": "sd_a_17",
+        "title": "Design Spotify",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124576/Design-Spotify"
+      },
+      {
+        "id": "sd_a_18",
+        "title": "Design Dropbox",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124577/Design-Dropbox"
+      },
+      {
+        "id": "sd_a_19",
+        "title": "Design Amazon",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124578/Design-Amazon"
+      },
+      {
+        "id": "sd_a_20",
+        "title": "Design Twitter Search",
+        "difficulty": "hard",
+        "topic": "system-design",
+        "link": "https://leetcode.com/discuss/interview-question/system-design/124579/Design-Twitter-Search"
+      },
+      {
+        "id": "sysdes_1776254202624_0",
+        "title": "If WhatsApp and Facebook were combined into a single platform, what scalability challenges would arise?",
+        "difficulty": "hard",
+        "topic": "Scalability",
+        "link": ""
+      },
+      {
+        "id": "sysdes_1776254202624_1",
+        "title": "How would you handle model drift in a real-time production system?",
+        "difficulty": "hard",
+        "topic": "ML/Production",
+        "link": ""
+      }
     ]
   },
   "oops": {
     "beginner": [
-      { "id": "oop_b_1", "title": "Classes and Objects Basics", "difficulty": "easy", "topic": "classes", "link": "https://www.geeksforgeeks.org/classes-objects-java/" },
-      { "id": "oop_b_2", "title": "Constructors and Destructors", "difficulty": "easy", "topic": "constructors", "link": "https://www.geeksforgeeks.org/constructors-c/" },
-      { "id": "oop_b_3", "title": "Encapsulation", "difficulty": "easy", "topic": "encapsulation", "link": "https://www.geeksforgeeks.org/encapsulation-in-java/" },
-      { "id": "oop_b_4", "title": "Inheritance Basics", "difficulty": "easy", "topic": "inheritance", "link": "https://www.geeksforgeeks.org/inheritance-in-java/" },
-      { "id": "oop_b_5", "title": "Method Overloading", "difficulty": "easy", "topic": "polymorphism", "link": "https://www.geeksforgeeks.org/overloading-in-java/" },
-      { "id": "oop_b_6", "title": "Method Overriding", "difficulty": "easy", "topic": "polymorphism", "link": "https://www.geeksforgeeks.org/overriding-in-java/" },
-      { "id": "oop_b_7", "title": "Abstract Classes", "difficulty": "easy", "topic": "abstraction", "link": "https://www.geeksforgeeks.org/abstract-classes-in-java/" },
-      { "id": "oop_b_8", "title": "Interfaces", "difficulty": "easy", "topic": "abstraction", "link": "https://www.geeksforgeeks.org/interfaces-in-java/" },
-      { "id": "oop_b_9", "title": "Access Modifiers", "difficulty": "easy", "topic": "encapsulation", "link": "https://www.geeksforgeeks.org/access-modifiers-java/" },
-      { "id": "oop_b_10", "title": "Static Keyword", "difficulty": "easy", "topic": "basics", "link": "https://www.geeksforgeeks.org/static-keyword-java/" },
-      { "id": "oop_b_11", "title": "this Keyword", "difficulty": "easy", "topic": "basics", "link": "https://www.geeksforgeeks.org/this-reference-in-java/" },
-      { "id": "oop_b_12", "title": "super Keyword", "difficulty": "easy", "topic": "inheritance", "link": "https://www.geeksforgeeks.org/super-keyword/" },
-      { "id": "oop_b_13", "title": "final Keyword", "difficulty": "easy", "topic": "basics", "link": "https://www.geeksforgeeks.org/final-keyword-java/" },
-      { "id": "oop_b_14", "title": "Getters and Setters", "difficulty": "easy", "topic": "encapsulation", "link": "https://www.geeksforgeeks.org/getter-and-setter-in-java/" },
-      { "id": "oop_b_15", "title": "Object Cloning", "difficulty": "easy", "topic": "basics", "link": "https://www.geeksforgeeks.org/clone-method-in-java/" },
-      { "id": "oop_b_16", "title": "toString Method", "difficulty": "easy", "topic": "basics", "link": "https://www.geeksforgeeks.org/object-tostring-method-in-java/" },
-      { "id": "oop_b_17", "title": "equals and hashCode", "difficulty": "medium", "topic": "basics", "link": "https://www.geeksforgeeks.org/equals-hashcode-methods-java/" },
-      { "id": "oop_b_18", "title": "Type Casting", "difficulty": "easy", "topic": "polymorphism", "link": "https://www.geeksforgeeks.org/type-casting-java/" },
-      { "id": "oop_b_19", "title": "Wrapper Classes", "difficulty": "easy", "topic": "basics", "link": "https://www.geeksforgeeks.org/wrapper-classes-java/" },
-      { "id": "oop_b_20", "title": "Exception Handling Basics", "difficulty": "easy", "topic": "exceptions", "link": "https://www.geeksforgeeks.org/exceptions-in-java/" }
+      {
+        "id": "oop_b_1",
+        "title": "Classes and Objects Basics",
+        "difficulty": "easy",
+        "topic": "classes",
+        "link": "https://www.geeksforgeeks.org/classes-objects-java/"
+      },
+      {
+        "id": "oop_b_2",
+        "title": "Constructors and Destructors",
+        "difficulty": "easy",
+        "topic": "constructors",
+        "link": "https://www.geeksforgeeks.org/constructors-c/"
+      },
+      {
+        "id": "oop_b_3",
+        "title": "Encapsulation",
+        "difficulty": "easy",
+        "topic": "encapsulation",
+        "link": "https://www.geeksforgeeks.org/encapsulation-in-java/"
+      },
+      {
+        "id": "oop_b_4",
+        "title": "Inheritance Basics",
+        "difficulty": "easy",
+        "topic": "inheritance",
+        "link": "https://www.geeksforgeeks.org/inheritance-in-java/"
+      },
+      {
+        "id": "oop_b_5",
+        "title": "Method Overloading",
+        "difficulty": "easy",
+        "topic": "polymorphism",
+        "link": "https://www.geeksforgeeks.org/overloading-in-java/"
+      },
+      {
+        "id": "oop_b_6",
+        "title": "Method Overriding",
+        "difficulty": "easy",
+        "topic": "polymorphism",
+        "link": "https://www.geeksforgeeks.org/overriding-in-java/"
+      },
+      {
+        "id": "oop_b_7",
+        "title": "Abstract Classes",
+        "difficulty": "easy",
+        "topic": "abstraction",
+        "link": "https://www.geeksforgeeks.org/abstract-classes-in-java/"
+      },
+      {
+        "id": "oop_b_8",
+        "title": "Interfaces",
+        "difficulty": "easy",
+        "topic": "abstraction",
+        "link": "https://www.geeksforgeeks.org/interfaces-in-java/"
+      },
+      {
+        "id": "oop_b_9",
+        "title": "Access Modifiers",
+        "difficulty": "easy",
+        "topic": "encapsulation",
+        "link": "https://www.geeksforgeeks.org/access-modifiers-java/"
+      },
+      {
+        "id": "oop_b_10",
+        "title": "Static Keyword",
+        "difficulty": "easy",
+        "topic": "basics",
+        "link": "https://www.geeksforgeeks.org/static-keyword-java/"
+      },
+      {
+        "id": "oop_b_11",
+        "title": "this Keyword",
+        "difficulty": "easy",
+        "topic": "basics",
+        "link": "https://www.geeksforgeeks.org/this-reference-in-java/"
+      },
+      {
+        "id": "oop_b_12",
+        "title": "super Keyword",
+        "difficulty": "easy",
+        "topic": "inheritance",
+        "link": "https://www.geeksforgeeks.org/super-keyword/"
+      },
+      {
+        "id": "oop_b_13",
+        "title": "final Keyword",
+        "difficulty": "easy",
+        "topic": "basics",
+        "link": "https://www.geeksforgeeks.org/final-keyword-java/"
+      },
+      {
+        "id": "oop_b_14",
+        "title": "Getters and Setters",
+        "difficulty": "easy",
+        "topic": "encapsulation",
+        "link": "https://www.geeksforgeeks.org/getter-and-setter-in-java/"
+      },
+      {
+        "id": "oop_b_15",
+        "title": "Object Cloning",
+        "difficulty": "easy",
+        "topic": "basics",
+        "link": "https://www.geeksforgeeks.org/clone-method-in-java/"
+      },
+      {
+        "id": "oop_b_16",
+        "title": "toString Method",
+        "difficulty": "easy",
+        "topic": "basics",
+        "link": "https://www.geeksforgeeks.org/object-tostring-method-in-java/"
+      },
+      {
+        "id": "oop_b_17",
+        "title": "equals and hashCode",
+        "difficulty": "medium",
+        "topic": "basics",
+        "link": "https://www.geeksforgeeks.org/equals-hashcode-methods-java/"
+      },
+      {
+        "id": "oop_b_18",
+        "title": "Type Casting",
+        "difficulty": "easy",
+        "topic": "polymorphism",
+        "link": "https://www.geeksforgeeks.org/type-casting-java/"
+      },
+      {
+        "id": "oop_b_19",
+        "title": "Wrapper Classes",
+        "difficulty": "easy",
+        "topic": "basics",
+        "link": "https://www.geeksforgeeks.org/wrapper-classes-java/"
+      },
+      {
+        "id": "oop_b_20",
+        "title": "Exception Handling Basics",
+        "difficulty": "easy",
+        "topic": "exceptions",
+        "link": "https://www.geeksforgeeks.org/exceptions-in-java/"
+      }
     ],
     "intermediate": [
-      { "id": "oop_i_1", "title": "Diamond Problem in Inheritance", "difficulty": "medium", "topic": "inheritance", "link": "https://www.geeksforgeeks.org/java-and-multiple-inheritance/" },
-      { "id": "oop_i_2", "title": "Composition vs Inheritance", "difficulty": "medium", "topic": "design-principles", "link": "https://www.geeksforgeeks.org/composition-in-java/" },
-      { "id": "oop_i_3", "title": "SOLID Principles — SRP", "difficulty": "medium", "topic": "solid", "link": "https://www.geeksforgeeks.org/single-responsibility-principle/" },
-      { "id": "oop_i_4", "title": "SOLID Principles — OCP", "difficulty": "medium", "topic": "solid", "link": "https://www.geeksforgeeks.org/open-closed-principle/" },
-      { "id": "oop_i_5", "title": "SOLID Principles — LSP", "difficulty": "medium", "topic": "solid", "link": "https://www.geeksforgeeks.org/liskov-substitution-principle/" },
-      { "id": "oop_i_6", "title": "SOLID Principles — ISP", "difficulty": "medium", "topic": "solid", "link": "https://www.geeksforgeeks.org/interface-segregation-principle/" },
-      { "id": "oop_i_7", "title": "SOLID Principles — DIP", "difficulty": "medium", "topic": "solid", "link": "https://www.geeksforgeeks.org/dependency-inversion-principle/" },
-      { "id": "oop_i_8", "title": "Singleton Pattern", "difficulty": "medium", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/singleton-class-java/" },
-      { "id": "oop_i_9", "title": "Factory Pattern", "difficulty": "medium", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/factory-method-design-pattern/" },
-      { "id": "oop_i_10", "title": "Observer Pattern", "difficulty": "medium", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/observer-pattern/" },
-      { "id": "oop_i_11", "title": "Strategy Pattern", "difficulty": "medium", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/strategy-pattern/" },
-      { "id": "oop_i_12", "title": "Adapter Pattern", "difficulty": "medium", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/adapter-pattern/" },
-      { "id": "oop_i_13", "title": "Generics in Java", "difficulty": "medium", "topic": "generics", "link": "https://www.geeksforgeeks.org/generics-in-java/" },
-      { "id": "oop_i_14", "title": "Collections Framework Overview", "difficulty": "medium", "topic": "collections", "link": "https://www.geeksforgeeks.org/collections-in-java-2/" },
-      { "id": "oop_i_15", "title": "Comparable vs Comparator", "difficulty": "medium", "topic": "interfaces", "link": "https://www.geeksforgeeks.org/comparable-vs-comparator-in-java/" },
-      { "id": "oop_i_16", "title": "Inner Classes", "difficulty": "medium", "topic": "classes", "link": "https://www.geeksforgeeks.org/inner-class-java/" },
-      { "id": "oop_i_17", "title": "Anonymous Classes", "difficulty": "medium", "topic": "classes", "link": "https://www.geeksforgeeks.org/anonymous-inner-class-java/" },
-      { "id": "oop_i_18", "title": "Lambda Expressions", "difficulty": "medium", "topic": "functional", "link": "https://www.geeksforgeeks.org/lambda-expressions-java-8/" },
-      { "id": "oop_i_19", "title": "Enum Types", "difficulty": "medium", "topic": "basics", "link": "https://www.geeksforgeeks.org/enum-in-java/" },
-      { "id": "oop_i_20", "title": "Immutable Objects", "difficulty": "medium", "topic": "design-principles", "link": "https://www.geeksforgeeks.org/create-immutable-class-java/" }
+      {
+        "id": "oop_i_1",
+        "title": "Diamond Problem in Inheritance",
+        "difficulty": "medium",
+        "topic": "inheritance",
+        "link": "https://www.geeksforgeeks.org/java-and-multiple-inheritance/"
+      },
+      {
+        "id": "oop_i_2",
+        "title": "Composition vs Inheritance",
+        "difficulty": "medium",
+        "topic": "design-principles",
+        "link": "https://www.geeksforgeeks.org/composition-in-java/"
+      },
+      {
+        "id": "oop_i_3",
+        "title": "SOLID Principles — SRP",
+        "difficulty": "medium",
+        "topic": "solid",
+        "link": "https://www.geeksforgeeks.org/single-responsibility-principle/"
+      },
+      {
+        "id": "oop_i_4",
+        "title": "SOLID Principles — OCP",
+        "difficulty": "medium",
+        "topic": "solid",
+        "link": "https://www.geeksforgeeks.org/open-closed-principle/"
+      },
+      {
+        "id": "oop_i_5",
+        "title": "SOLID Principles — LSP",
+        "difficulty": "medium",
+        "topic": "solid",
+        "link": "https://www.geeksforgeeks.org/liskov-substitution-principle/"
+      },
+      {
+        "id": "oop_i_6",
+        "title": "SOLID Principles — ISP",
+        "difficulty": "medium",
+        "topic": "solid",
+        "link": "https://www.geeksforgeeks.org/interface-segregation-principle/"
+      },
+      {
+        "id": "oop_i_7",
+        "title": "SOLID Principles — DIP",
+        "difficulty": "medium",
+        "topic": "solid",
+        "link": "https://www.geeksforgeeks.org/dependency-inversion-principle/"
+      },
+      {
+        "id": "oop_i_8",
+        "title": "Singleton Pattern",
+        "difficulty": "medium",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/singleton-class-java/"
+      },
+      {
+        "id": "oop_i_9",
+        "title": "Factory Pattern",
+        "difficulty": "medium",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/factory-method-design-pattern/"
+      },
+      {
+        "id": "oop_i_10",
+        "title": "Observer Pattern",
+        "difficulty": "medium",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/observer-pattern/"
+      },
+      {
+        "id": "oop_i_11",
+        "title": "Strategy Pattern",
+        "difficulty": "medium",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/strategy-pattern/"
+      },
+      {
+        "id": "oop_i_12",
+        "title": "Adapter Pattern",
+        "difficulty": "medium",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/adapter-pattern/"
+      },
+      {
+        "id": "oop_i_13",
+        "title": "Generics in Java",
+        "difficulty": "medium",
+        "topic": "generics",
+        "link": "https://www.geeksforgeeks.org/generics-in-java/"
+      },
+      {
+        "id": "oop_i_14",
+        "title": "Collections Framework Overview",
+        "difficulty": "medium",
+        "topic": "collections",
+        "link": "https://www.geeksforgeeks.org/collections-in-java-2/"
+      },
+      {
+        "id": "oop_i_15",
+        "title": "Comparable vs Comparator",
+        "difficulty": "medium",
+        "topic": "interfaces",
+        "link": "https://www.geeksforgeeks.org/comparable-vs-comparator-in-java/"
+      },
+      {
+        "id": "oop_i_16",
+        "title": "Inner Classes",
+        "difficulty": "medium",
+        "topic": "classes",
+        "link": "https://www.geeksforgeeks.org/inner-class-java/"
+      },
+      {
+        "id": "oop_i_17",
+        "title": "Anonymous Classes",
+        "difficulty": "medium",
+        "topic": "classes",
+        "link": "https://www.geeksforgeeks.org/anonymous-inner-class-java/"
+      },
+      {
+        "id": "oop_i_18",
+        "title": "Lambda Expressions",
+        "difficulty": "medium",
+        "topic": "functional",
+        "link": "https://www.geeksforgeeks.org/lambda-expressions-java-8/"
+      },
+      {
+        "id": "oop_i_19",
+        "title": "Enum Types",
+        "difficulty": "medium",
+        "topic": "basics",
+        "link": "https://www.geeksforgeeks.org/enum-in-java/"
+      },
+      {
+        "id": "oop_i_20",
+        "title": "Immutable Objects",
+        "difficulty": "medium",
+        "topic": "design-principles",
+        "link": "https://www.geeksforgeeks.org/create-immutable-class-java/"
+      }
     ],
     "advanced": [
-      { "id": "oop_a_1", "title": "Builder Pattern", "difficulty": "hard", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/builder-design-pattern/" },
-      { "id": "oop_a_2", "title": "Decorator Pattern", "difficulty": "hard", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/decorator-pattern/" },
-      { "id": "oop_a_3", "title": "Proxy Pattern", "difficulty": "hard", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/proxy-design-pattern/" },
-      { "id": "oop_a_4", "title": "Command Pattern", "difficulty": "hard", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/command-pattern/" },
-      { "id": "oop_a_5", "title": "State Pattern", "difficulty": "hard", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/state-design-pattern/" },
-      { "id": "oop_a_6", "title": "Chain of Responsibility", "difficulty": "hard", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/chain-responsibility-design-pattern/" },
-      { "id": "oop_a_7", "title": "Template Method Pattern", "difficulty": "hard", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/template-method-design-pattern/" },
-      { "id": "oop_a_8", "title": "Flyweight Pattern", "difficulty": "hard", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/flyweight-design-pattern/" },
-      { "id": "oop_a_9", "title": "Mediator Pattern", "difficulty": "hard", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/mediator-design-pattern/" },
-      { "id": "oop_a_10", "title": "Visitor Pattern", "difficulty": "hard", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/visitor-design-pattern/" },
-      { "id": "oop_a_11", "title": "Abstract Factory Pattern", "difficulty": "hard", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/abstract-factory-pattern/" },
-      { "id": "oop_a_12", "title": "Prototype Pattern", "difficulty": "hard", "topic": "design-patterns", "link": "https://www.geeksforgeeks.org/prototype-design-pattern/" },
-      { "id": "oop_a_13", "title": "Multithreading and OOP", "difficulty": "hard", "topic": "concurrency", "link": "https://www.geeksforgeeks.org/multithreading-in-java/" },
-      { "id": "oop_a_14", "title": "Reflection in Java", "difficulty": "hard", "topic": "advanced", "link": "https://www.geeksforgeeks.org/reflection-in-java/" },
-      { "id": "oop_a_15", "title": "Dependency Injection", "difficulty": "hard", "topic": "design-principles", "link": "https://www.geeksforgeeks.org/dependency-injection/" },
-      { "id": "oop_a_16", "title": "Design Elevator System", "difficulty": "hard", "topic": "oop-design", "link": "https://www.geeksforgeeks.org/design-elevator-system/" },
-      { "id": "oop_a_17", "title": "Design Vending Machine", "difficulty": "hard", "topic": "oop-design", "link": "https://www.geeksforgeeks.org/design-vending-machine/" },
-      { "id": "oop_a_18", "title": "Design ATM", "difficulty": "hard", "topic": "oop-design", "link": "https://www.geeksforgeeks.org/design-atm/" },
-      { "id": "oop_a_19", "title": "Design Library Management", "difficulty": "hard", "topic": "oop-design", "link": "https://www.geeksforgeeks.org/design-library-management-system/" },
-      { "id": "oop_a_20", "title": "Design Chess Game", "difficulty": "hard", "topic": "oop-design", "link": "https://www.geeksforgeeks.org/design-a-chess-game/" }
+      {
+        "id": "oop_a_1",
+        "title": "Builder Pattern",
+        "difficulty": "hard",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/builder-design-pattern/"
+      },
+      {
+        "id": "oop_a_2",
+        "title": "Decorator Pattern",
+        "difficulty": "hard",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/decorator-pattern/"
+      },
+      {
+        "id": "oop_a_3",
+        "title": "Proxy Pattern",
+        "difficulty": "hard",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/proxy-design-pattern/"
+      },
+      {
+        "id": "oop_a_4",
+        "title": "Command Pattern",
+        "difficulty": "hard",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/command-pattern/"
+      },
+      {
+        "id": "oop_a_5",
+        "title": "State Pattern",
+        "difficulty": "hard",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/state-design-pattern/"
+      },
+      {
+        "id": "oop_a_6",
+        "title": "Chain of Responsibility",
+        "difficulty": "hard",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/chain-responsibility-design-pattern/"
+      },
+      {
+        "id": "oop_a_7",
+        "title": "Template Method Pattern",
+        "difficulty": "hard",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/template-method-design-pattern/"
+      },
+      {
+        "id": "oop_a_8",
+        "title": "Flyweight Pattern",
+        "difficulty": "hard",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/flyweight-design-pattern/"
+      },
+      {
+        "id": "oop_a_9",
+        "title": "Mediator Pattern",
+        "difficulty": "hard",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/mediator-design-pattern/"
+      },
+      {
+        "id": "oop_a_10",
+        "title": "Visitor Pattern",
+        "difficulty": "hard",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/visitor-design-pattern/"
+      },
+      {
+        "id": "oop_a_11",
+        "title": "Abstract Factory Pattern",
+        "difficulty": "hard",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/abstract-factory-pattern/"
+      },
+      {
+        "id": "oop_a_12",
+        "title": "Prototype Pattern",
+        "difficulty": "hard",
+        "topic": "design-patterns",
+        "link": "https://www.geeksforgeeks.org/prototype-design-pattern/"
+      },
+      {
+        "id": "oop_a_13",
+        "title": "Multithreading and OOP",
+        "difficulty": "hard",
+        "topic": "concurrency",
+        "link": "https://www.geeksforgeeks.org/multithreading-in-java/"
+      },
+      {
+        "id": "oop_a_14",
+        "title": "Reflection in Java",
+        "difficulty": "hard",
+        "topic": "advanced",
+        "link": "https://www.geeksforgeeks.org/reflection-in-java/"
+      },
+      {
+        "id": "oop_a_15",
+        "title": "Dependency Injection",
+        "difficulty": "hard",
+        "topic": "design-principles",
+        "link": "https://www.geeksforgeeks.org/dependency-injection/"
+      },
+      {
+        "id": "oop_a_16",
+        "title": "Design Elevator System",
+        "difficulty": "hard",
+        "topic": "oop-design",
+        "link": "https://www.geeksforgeeks.org/design-elevator-system/"
+      },
+      {
+        "id": "oop_a_17",
+        "title": "Design Vending Machine",
+        "difficulty": "hard",
+        "topic": "oop-design",
+        "link": "https://www.geeksforgeeks.org/design-vending-machine/"
+      },
+      {
+        "id": "oop_a_18",
+        "title": "Design ATM",
+        "difficulty": "hard",
+        "topic": "oop-design",
+        "link": "https://www.geeksforgeeks.org/design-atm/"
+      },
+      {
+        "id": "oop_a_19",
+        "title": "Design Library Management",
+        "difficulty": "hard",
+        "topic": "oop-design",
+        "link": "https://www.geeksforgeeks.org/design-library-management-system/"
+      },
+      {
+        "id": "oop_a_20",
+        "title": "Design Chess Game",
+        "difficulty": "hard",
+        "topic": "oop-design",
+        "link": "https://www.geeksforgeeks.org/design-a-chess-game/"
+      }
     ]
   }
 }
