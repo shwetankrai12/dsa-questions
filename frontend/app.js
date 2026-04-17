@@ -887,6 +887,37 @@ function calcThisMonth(data) {
   return { done, total: elapsed };
 }
 
+// ── Backend Sync ──────────────────────────────────────────────
+
+/**
+ * Fetch streak entries from the backend and merge into localStorage.
+ * Backend is the source of truth — its values overwrite local ones on conflict.
+ */
+async function syncStreakFromBackend() {
+  try {
+    const res = await authFetch(`${API_BASE}/streak/entries`);
+    if (!res.ok) return;
+
+    const remote = await res.json();  // { "YYYY-MM-DD": { done: bool }, ... }
+    const local  = loadStreakData();
+
+    // Merge: remote wins
+    const merged = Object.assign({}, local, remote);
+    saveStreakData(merged);
+  } catch (_) { /* offline — keep local */ }
+}
+
+/**
+ * Push a single entry to the backend in the background.
+ * Fire-and-forget: localStorage is already updated by the caller.
+ */
+function pushStreakEntry(date, done) {
+  authFetch(`${API_BASE}/streak/entries`, {
+    method: 'POST',
+    body:   JSON.stringify({ date, done })
+  }).catch(() => {});
+}
+
 // ── Init ──────────────────────────────────────────────────────
 async function initStreak() {
   loadUserFromToken();
@@ -906,10 +937,17 @@ async function initStreak() {
   renderStreakStats();
   renderCalendar(streakCalYear, streakCalMonth);
 
-  // Auto-show today's question on load (without marking as visited)
+  // Auto-show today's question on load
   const tk = todayKey();
   streakActiveDate = tk;
   renderDayPanel(tk);
+
+  // Background: pull from Supabase, then refresh UI
+  syncStreakFromBackend().then(() => {
+    renderStreakStats();
+    renderCalendar(streakCalYear, streakCalMonth);
+    renderDayPanel(streakActiveDate || tk);
+  });
 
   document.getElementById('cal-prev')?.addEventListener('click', () => {
     if (streakCalMonth === 0) { streakCalYear--; streakCalMonth = 11; }
@@ -1017,6 +1055,7 @@ function renderCalendar(year, month) {
         if (fresh[dateStr] === undefined) {
           fresh[dateStr] = { done: false };
           saveStreakData(fresh);
+          pushStreakEntry(dateStr, false);   // sync first-visit to backend
         }
         streakActiveDate = dateStr;
         renderCalendar(year, month);   // re-render to show new dot + selected state
@@ -1092,12 +1131,16 @@ function renderDayPanel(dateStr) {
 function toggleStreakDone(dateStr) {
   const data    = loadStreakData();
   const wasDone = data[dateStr]?.done === true;
-  data[dateStr] = { done: !wasDone };
+  const newDone = !wasDone;
+  data[dateStr] = { done: newDone };
   saveStreakData(data);
   renderStreakStats();
   renderCalendar(streakCalYear, streakCalMonth);
   renderDayPanel(dateStr);
   showToast(wasDone ? 'QUEST RESET' : 'ENEMY DEFEATED ✓');
+
+  // Persist to Supabase in the background
+  pushStreakEntry(dateStr, newDone);
 }
 
 // ═══ Landing Page (index.html) ════════════════════════════════
