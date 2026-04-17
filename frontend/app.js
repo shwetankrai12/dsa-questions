@@ -461,6 +461,9 @@ async function setStatus(sectionKey, questionId, status, event) {
   const labels = { todo: 'TO DO', progress: 'FIGHTING ⚔', done: 'DEFEATED ✓' };
   showToast(labels[status]);
 
+  // Marking a question defeated counts as today's practice
+  if (status === 'done') markTodayDone();
+
   // Persist to backend in the background
   authFetch(`${API_BASE}/progress`, {
     method: 'POST',
@@ -887,6 +890,19 @@ function calcThisMonth(data) {
   return { done, total: elapsed };
 }
 
+// ── Mark Today Done ───────────────────────────────────────────
+// Called when any question is marked DEFEATED in the quest list.
+// Only writes if today isn't already marked done (idempotent).
+function markTodayDone() {
+  const tk   = todayKey();
+  const data = loadStreakData();
+  if (!data[tk]?.done) {
+    data[tk] = { done: true };
+    saveStreakData(data);
+    pushStreakEntry(tk, true);
+  }
+}
+
 // ── Backend Sync ──────────────────────────────────────────────
 
 /**
@@ -1050,15 +1066,8 @@ function renderCalendar(year, month) {
 
     if (!isFuture) {
       cell.addEventListener('click', () => {
-        // Mark day as visited (done: false) if not yet in data
-        const fresh = loadStreakData();
-        if (fresh[dateStr] === undefined) {
-          fresh[dateStr] = { done: false };
-          saveStreakData(fresh);
-          pushStreakEntry(dateStr, false);   // sync first-visit to backend
-        }
         streakActiveDate = dateStr;
-        renderCalendar(year, month);   // re-render to show new dot + selected state
+        renderCalendar(year, month);
         renderStreakStats();
         renderDayPanel(dateStr);
         // Scroll panel into view on mobile
