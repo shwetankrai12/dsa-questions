@@ -21,8 +21,17 @@
       <span id="nav-user-name" class="navbar-name"></span>
       <div id="nav-user-avatar" class="navbar-avatar"></div>
       <button class="navbar-logout" onclick="handleLogout()">logout</button>
+      <button class="navbar-hamburger" id="navbar-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+  <div class="navbar-mobile-menu" id="navbar-mobile-menu">
+    <a href="dashboard.html" class="navbar-mobile-item">DASHBOARD</a>
+    <a href="streak.html"    class="navbar-mobile-item active">🔥 STREAK</a>
+    <a href="notes.html"     class="navbar-mobile-item">NOTES</a>
+    <button class="navbar-mobile-item" onclick="handleLogout()">LOGOUT</button>
+  </div>
 
   <!-- ═══ MAIN ═══ -->
   <main class="page-container">

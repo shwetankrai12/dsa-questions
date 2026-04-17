@@ -1546,6 +1546,60 @@ main {
   background: #fff;
 }
 
+/* ── Hamburger / Mobile Nav ───────────────────────────────── */
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 6px 7px;
+  border: 2px solid var(--accent-purple);
+  background: transparent;
+  flex-shrink: 0;
+}
+.navbar-hamburger span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background: var(--accent-cyan);
+  transition: background 150ms;
+}
+.navbar-hamburger:hover span { background: var(--accent-yellow); }
+.navbar-hamburger.open        { border-color: var(--accent-yellow); }
+.navbar-hamburger.open span   { background: var(--accent-yellow); }
+
+.navbar-mobile-menu {
+  position: fixed;
+  top: 52px;
+  left: 0;
+  right: 0;
+  background: var(--bg-dark);
+  border-bottom: 2px solid var(--accent-purple);
+  padding: 8px 0;
+  display: none;
+  flex-direction: column;
+  z-index: 49;
+}
+.navbar-mobile-menu.open { display: flex; }
+
+.navbar-mobile-item {
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  padding: 14px 24px;
+  border-bottom: 1px solid rgba(155,93,229,0.12);
+  display: block;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  transition: color 80ms, background 80ms;
+}
+.navbar-mobile-item:last-child { border-bottom: none; }
+.navbar-mobile-item:hover      { color: var(--text-primary); background: rgba(155,93,229,0.06); }
+.navbar-mobile-item.active     { color: var(--accent-yellow); }
+
 /* ── Utilities ────────────────────────────────────────────── */
 .hidden { display: none !important; }
 
@@ -1567,6 +1621,9 @@ main {
   .achievements-grid { grid-template-columns: repeat(2,1fr); }
   .status-btn   { padding: 3px 5px; font-size: 5px; }
   .navbar-name  { display: none; }
+  .navbar-link  { display: none; }
+  .navbar-logout { display: none; }
+  .navbar-hamburger { display: flex; }
   .streak-stats { grid-template-columns: 1fr; gap: 4px; }
   .notes-grid   { grid-template-columns: repeat(2, 1fr); }
   .question-title { font-size: 7px; }

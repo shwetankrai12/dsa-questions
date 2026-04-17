@@ -1187,3 +1187,25 @@ function toggleStreakDone(dateStr) {
   }
   // Otherwise show the login page (already visible by default)
 })();
+
+// ═══ Hamburger Nav (runs on every page) ══════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  const btn  = document.getElementById('navbar-hamburger');
+  const menu = document.getElementById('navbar-mobile-menu');
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+  });
+
+  // Tap anywhere outside → close
+  document.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+  });
+
+  // Prevent clicks inside the menu from closing it immediately
+  menu.addEventListener('click', e => e.stopPropagation());
+});
