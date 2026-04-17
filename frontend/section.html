@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Practice DSA problems with status tracking. Mark questions as To Do, In Progress, or Done.">
-  <meta name="theme-color" content="#0a0a0a">
-  <title>Questions — DSA Sheet</title>
+  <meta name="description" content="Practice DSA problems with status tracking. Mark questions as To Do, Fighting, or Defeated.">
+  <meta name="theme-color" content="#1a0b2e">
+  <title>Quest Board — DSA Sheet</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
 </head>
@@ -13,38 +13,57 @@
 
   <!-- ═══ TOP BAR ═══ -->
   <div class="top-bar">
-    <button class="back-btn" onclick="window.location.href='dashboard.html'">←</button>
-    <h1 class="page-title" id="section-title">Loading...</h1>
+    <button class="back-btn" onclick="window.location.href='dashboard.html'">&#8592;</button>
+    <h1 class="page-title" id="section-title">LOADING...</h1>
+  </div>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="dashboard.html">DASHBOARD</a> / <span id="section-title-bc">QUEST</span>
   </div>
 
   <!-- ═══ MAIN CONTENT ═══ -->
   <main>
+
     <!-- Section Summary -->
     <div class="section-summary" id="section-summary">
       <div class="section-summary-progress">
         <svg width="56" height="56" viewBox="0 0 56 56">
-          <circle cx="28" cy="28" r="24" fill="none" stroke="#222" stroke-width="4"/>
-          <circle cx="28" cy="28" r="24" fill="none" stroke="#a3e635" stroke-width="4"
-                  stroke-dasharray="150.8" stroke-dashoffset="150.8" stroke-linecap="round"
+          <circle cx="28" cy="28" r="24" fill="none" stroke="rgba(155,93,229,0.25)" stroke-width="4"/>
+          <circle cx="28" cy="28" r="24" fill="none" stroke="var(--accent-cyan)" stroke-width="4"
+                  stroke-dasharray="150.8" stroke-dashoffset="150.8"
                   id="progress-ring"/>
         </svg>
         <span class="progress-text" id="progress-text">0%</span>
       </div>
       <div class="section-summary-info">
         <h3 id="summary-title">Loading...</h3>
-        <p id="summary-detail">0 / 0 completed</p>
+        <p id="summary-detail">0 / 0 defeated</p>
       </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-chip active" onclick="setQuestionFilter('all', this)">ALL</button>
+      <button class="filter-chip"        onclick="setQuestionFilter('todo', this)">TO DO</button>
+      <button class="filter-chip"        onclick="setQuestionFilter('progress', this)">FIGHTING</button>
+      <button class="filter-chip"        onclick="setQuestionFilter('done', this)">DEFEATED</button>
     </div>
 
     <!-- Question List -->
     <div class="question-list" id="question-list">
-      <!-- Rendered by JS -->
-      <div class="question-row skeleton" style="height: 52px; margin: 0 24px 8px; border-radius: 8px;"></div>
-      <div class="question-row skeleton" style="height: 52px; margin: 0 24px 8px; border-radius: 8px;"></div>
-      <div class="question-row skeleton" style="height: 52px; margin: 0 24px 8px; border-radius: 8px;"></div>
-      <div class="question-row skeleton" style="height: 52px; margin: 0 24px 8px; border-radius: 8px;"></div>
-      <div class="question-row skeleton" style="height: 52px; margin: 0 24px 8px; border-radius: 8px;"></div>
+      <div class="question-row skeleton" style="height:54px; margin:0 20px 4px;"></div>
+      <div class="question-row skeleton" style="height:54px; margin:0 20px 4px;"></div>
+      <div class="question-row skeleton" style="height:54px; margin:0 20px 4px;"></div>
+      <div class="question-row skeleton" style="height:54px; margin:0 20px 4px;"></div>
+      <div class="question-row skeleton" style="height:54px; margin:0 20px 4px;"></div>
     </div>
+
+    <!-- Section Footer -->
+    <div class="section-footer">
+      KEEP FIGHTING · ONE QUESTION AT A TIME
+    </div>
+
   </main>
 
   <div class="toast" id="toast"></div>

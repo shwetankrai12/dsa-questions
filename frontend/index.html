@@ -4,41 +4,182 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Master Data Structures & Algorithms with DSA Sheet by Shwetank. Track your progress, solve curated problems, and ace your coding interviews.">
-  <meta name="theme-color" content="#0a0a0a">
-  <title>DSA Sheet — Master Algorithms, One Problem at a Time</title>
+  <meta name="theme-color" content="#1a0b2e">
+  <title>DSA Sheet — Insert Coin to Continue</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
 </head>
 <body>
 
+  <!-- ═══ ARCADE TOPBAR (decorative) ═══ -->
+  <div class="landing-topbar">
+    <span>SCORE: 0247</span>
+    <span>STAGE: 01</span>
+    <span class="landing-topbar-lives">LIVES ♥♥♥</span>
+  </div>
+
   <!-- ═══ LANDING PAGE ═══ -->
   <div id="landing-page" class="landing-page">
-    <div class="landing-badge">Open Source DSA Tracker</div>
 
-    <h1 class="landing-title">
-      DSA <span class="accent">Sheet</span>
-    </h1>
+    <!-- Floating Decor -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="floating-bg pacman">
+      <rect x="5" y="1" width="5" height="2" fill="#ffd23f" />
+      <rect x="3" y="3" width="9" height="2" fill="#ffd23f" />
+      <rect x="1" y="5" width="8" height="2" fill="#ffd23f" />
+      <rect x="1" y="7" width="9" height="2" fill="#ffd23f" />
+      <rect x="1" y="9" width="13" height="2" fill="#ffd23f" />
+      <rect x="3" y="11" width="9" height="2" fill="#ffd23f" />
+      <rect x="5" y="13" width="5" height="2" fill="#ffd23f" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="floating-bg blinky">
+      <rect x="4" y="1" width="7" height="2" fill="#ff5d8f" />
+      <rect x="2" y="3" width="11" height="2" fill="#ff5d8f" />
+      <rect x="0" y="5" width="15" height="8" fill="#ff5d8f" />
+      <rect x="0" y="13" width="3" height="1" fill="#ff5d8f" />
+      <rect x="4" y="13" width="3" height="1" fill="#ff5d8f" />
+      <rect x="8" y="13" width="3" height="1" fill="#ff5d8f" />
+      <rect x="12" y="13" width="3" height="1" fill="#ff5d8f" />
+      <rect x="0" y="14" width="2" height="1" fill="#ff5d8f" />
+      <rect x="5" y="14" width="2" height="1" fill="#ff5d8f" />
+      <rect x="9" y="14" width="2" height="1" fill="#ff5d8f" />
+      <rect x="13" y="14" width="2" height="1" fill="#ff5d8f" />
+      <g class="ghost-eyes">
+        <rect x="3" y="5" width="2" height="4" fill="#ffffff" />
+        <rect x="10" y="5" width="2" height="4" fill="#ffffff" />
+        <rect x="3" y="6" width="1" height="2" fill="#1a0b2e" />
+        <rect x="10" y="6" width="1" height="2" fill="#1a0b2e" />
+      </g>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="floating-bg pinky">
+      <rect x="4" y="1" width="7" height="2" fill="#f4c0d1" />
+      <rect x="2" y="3" width="11" height="2" fill="#f4c0d1" />
+      <rect x="0" y="5" width="15" height="8" fill="#f4c0d1" />
+      <rect x="0" y="13" width="3" height="1" fill="#f4c0d1" />
+      <rect x="4" y="13" width="3" height="1" fill="#f4c0d1" />
+      <rect x="8" y="13" width="3" height="1" fill="#f4c0d1" />
+      <rect x="12" y="13" width="3" height="1" fill="#f4c0d1" />
+      <rect x="0" y="14" width="2" height="1" fill="#f4c0d1" />
+      <rect x="5" y="14" width="2" height="1" fill="#f4c0d1" />
+      <rect x="9" y="14" width="2" height="1" fill="#f4c0d1" />
+      <rect x="13" y="14" width="2" height="1" fill="#f4c0d1" />
+      <g class="ghost-eyes">
+        <rect x="3" y="5" width="2" height="4" fill="#ffffff" />
+        <rect x="10" y="5" width="2" height="4" fill="#ffffff" />
+        <rect x="3" y="6" width="1" height="2" fill="#1a0b2e" />
+        <rect x="10" y="6" width="1" height="2" fill="#1a0b2e" />
+      </g>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="floating-bg inky">
+      <rect x="4" y="1" width="7" height="2" fill="#00f5d4" />
+      <rect x="2" y="3" width="11" height="2" fill="#00f5d4" />
+      <rect x="0" y="5" width="15" height="8" fill="#00f5d4" />
+      <rect x="0" y="13" width="3" height="1" fill="#00f5d4" />
+      <rect x="4" y="13" width="3" height="1" fill="#00f5d4" />
+      <rect x="8" y="13" width="3" height="1" fill="#00f5d4" />
+      <rect x="12" y="13" width="3" height="1" fill="#00f5d4" />
+      <rect x="0" y="14" width="2" height="1" fill="#00f5d4" />
+      <rect x="5" y="14" width="2" height="1" fill="#00f5d4" />
+      <rect x="9" y="14" width="2" height="1" fill="#00f5d4" />
+      <rect x="13" y="14" width="2" height="1" fill="#00f5d4" />
+      <g class="ghost-eyes">
+        <rect x="3" y="5" width="2" height="4" fill="#ffffff" />
+        <rect x="10" y="5" width="2" height="4" fill="#ffffff" />
+        <rect x="3" y="6" width="1" height="2" fill="#1a0b2e" />
+        <rect x="10" y="6" width="1" height="2" fill="#1a0b2e" />
+      </g>
+    </svg>
 
-    <p class="landing-tagline">
-      Master Data Structures & Algorithms, one problem at a time.
-      Track your progress across 240+ curated problems.
-    </p>
+    <main class="landing-main">
+      <div class="landing-badge">
+        <span class="blink-dot"></span>
+        INSERT COIN TO CONTINUE
+      </div>
 
-    <button id="google-login-btn" class="google-btn" onclick="handleGoogleLogin()">
-      <svg class="google-icon" viewBox="0 0 24 24" fill="none">
-        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
-        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-      </svg>
-      Sign in with Google
+      <h1 class="landing-title">
+        <span class="title-dsa">DSA</span>&nbsp;<span class="title-sheet">SHEET</span>
+      </h1>
+
+      <p class="landing-tagline">
+        Master Data Structures &amp; Algorithms, one problem at a time.<br>
+        Track your progress across 240+ curated problems.
+      </p>
+
+      <button id="google-login-btn" class="google-btn" onclick="handleGoogleLogin()">
+        <svg class="google-icon" viewBox="0 0 24 24" fill="none">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        ▶ SIGN IN WITH GOOGLE
+      </button>
+
+      <p id="auth-error" style="display:none; color:var(--accent-pink); margin-top:1rem; font-family:var(--font-pixel); font-size:8px; letter-spacing:1px;">
+        LOGIN FAILED — PLEASE TRY AGAIN
+      </p>
+
+      <!-- Stats Bar -->
+      <div class="landing-stats">
+        <div class="landing-stat-cell">
+          <span class="landing-stat-value">240</span>
+          <span class="landing-stat-label">PROBLEMS</span>
+        </div>
+        <div class="landing-stat-cell">
+          <span class="landing-stat-value">03</span>
+          <span class="landing-stat-label">LEVELS</span>
+        </div>
+        <div class="landing-stat-cell">
+          <span class="landing-stat-value">∞</span>
+          <span class="landing-stat-label">STREAKS</span>
+        </div>
+        <div class="landing-stat-cell">
+          <span class="landing-stat-value">1UP</span>
+          <span class="landing-stat-label">PLACEMENT</span>
+        </div>
+      </div>
+    </main>
+
+    <p class="landing-footer">BUILT BY SHWETANK · MIT © 2026</p>
+  </div>
+
+  <!-- ═══ LEVEL SELECT PAGE (shown after OAuth) ═══ -->
+  <div id="level-page" class="level-page" style="display:none">
+
+    <p class="level-page-subtitle">SELECT YOUR DIFFICULTY</p>
+    <h2 class="level-page-heading">CHOOSE YOUR QUEST BOARD</h2>
+
+    <div class="level-cards">
+
+      <div class="level-card" data-level="beginner" onclick="selectLevel(this)">
+        <div class="level-icon">🟢</div>
+        <div class="level-name">BEGINNER</div>
+        <div class="level-desc">Arrays, strings, basic recursion — build your foundation and land your first offer.</div>
+        <span class="level-count">~60 problems</span>
+        <span class="level-xp">+10 XP per solve</span>
+      </div>
+
+      <div class="level-card" data-level="intermediate" onclick="selectLevel(this)">
+        <div class="level-icon">🟡</div>
+        <div class="level-name">INTERMEDIATE</div>
+        <div class="level-desc">Trees, graphs, dynamic programming — FAANG-style challenges for the battle-tested.</div>
+        <span class="level-count">~75 problems</span>
+        <span class="level-xp">+25 XP per solve</span>
+      </div>
+
+      <div class="level-card" data-level="advanced" onclick="selectLevel(this)">
+        <div class="level-icon">🔴</div>
+        <div class="level-name">ADVANCED</div>
+        <div class="level-desc">Segment trees, tries, hard DP — only for those who truly want to be defeated.</div>
+        <span class="level-count">~60 problems</span>
+        <span class="level-xp">+50 XP per solve</span>
+      </div>
+
+    </div>
+
+    <button id="level-continue-btn" class="level-continue-btn" onclick="confirmLevel()" disabled>
+      ▶ ENTER THE ARENA
     </button>
 
-    <p id="auth-error" style="display:none; color:#ef4444; margin-top:1rem; font-size:0.8125rem;">
-      Login failed. Please try again.
-    </p>
-
-    <p class="landing-footer">Built with 💚 by Shwetank</p>
   </div>
 
   <script src="app.js"></script>

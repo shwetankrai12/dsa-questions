@@ -140,6 +140,62 @@
         "difficulty": "easy",
         "topic": "math",
         "link": "https://leetcode.com/problems/fizz-buzz"
+      },
+      {
+        "id": "dsa_b_21",
+        "title": "Implement Stack using Queues",
+        "difficulty": "easy",
+        "topic": "stacks",
+        "link": "https://leetcode.com/problems/implement-stack-using-queues"
+      },
+      {
+        "id": "dsa_b_22",
+        "title": "Implement Queue using Stacks",
+        "difficulty": "easy",
+        "topic": "queues",
+        "link": "https://leetcode.com/problems/implement-queue-using-stacks"
+      },
+      {
+        "id": "dsa_b_23",
+        "title": "Middle of the Linked List",
+        "difficulty": "easy",
+        "topic": "linked-list",
+        "link": "https://leetcode.com/problems/middle-of-the-linked-list"
+      },
+      {
+        "id": "dsa_b_24",
+        "title": "Delete Node in a Linked List",
+        "difficulty": "easy",
+        "topic": "linked-list",
+        "link": "https://leetcode.com/problems/delete-node-in-a-linked-list"
+      },
+      {
+        "id": "dsa_b_25",
+        "title": "Remove Linked List Elements",
+        "difficulty": "easy",
+        "topic": "linked-list",
+        "link": "https://leetcode.com/problems/remove-linked-list-elements"
+      },
+      {
+        "id": "dsa_b_26",
+        "title": "First Bad Version",
+        "difficulty": "easy",
+        "topic": "binary-search",
+        "link": "https://leetcode.com/problems/first-bad-version"
+      },
+      {
+        "id": "dsa_b_27",
+        "title": "Guess Number Higher or Lower",
+        "difficulty": "easy",
+        "topic": "binary-search",
+        "link": "https://leetcode.com/problems/guess-number-higher-or-lower"
+      },
+      {
+        "id": "dsa_b_28",
+        "title": "Diameter of Binary Tree",
+        "difficulty": "easy",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/diameter-of-binary-tree"
       }
     ],
     "intermediate": [
@@ -282,6 +338,69 @@
         "difficulty": "medium",
         "topic": "dynamic-programming",
         "link": "https://leetcode.com/problems/decode-ways"
+      },
+      {
+        "id": "dsa_i_21",
+        "title": "Maximum Average Subarray I",
+        "difficulty": "easy",
+        "topic": "sliding-window",
+        "link": "https://leetcode.com/problems/maximum-average-subarray-i"
+      },
+      {
+        "id": "dsa_i_22",
+        "title": "Permutation in String",
+        "difficulty": "medium",
+        "topic": "sliding-window",
+        "link": "https://leetcode.com/problems/permutation-in-string"
+      },
+      {
+        "id": "dsa_i_23",
+        "title": "Longest Repeating Character Replacement",
+        "difficulty": "medium",
+        "topic": "sliding-window",
+        "link": "https://leetcode.com/problems/longest-repeating-character-replacement"
+      },
+      {
+        "id": "dsa_i_24",
+        "title": "Find Peak Element",
+        "difficulty": "medium",
+        "topic": "binary-search",
+        "link": "https://leetcode.com/problems/find-peak-element"
+      },
+      {
+        "id": "dsa_i_25",
+        "title": "Search a 2D Matrix",
+        "difficulty": "medium",
+        "topic": "binary-search",
+        "link": "https://leetcode.com/problems/search-a-2d-matrix"
+      },
+      {
+        "id": "dsa_i_26",
+        "title": "Daily Temperatures",
+        "difficulty": "medium",
+        "topic": "stacks",
+        "link": "https://leetcode.com/problems/daily-temperatures"
+      },
+      {
+        "id": "dsa_i_27",
+        "title": "Next Greater Element I",
+        "difficulty": "easy",
+        "topic": "stacks",
+        "link": "https://leetcode.com/problems/next-greater-element-i"
+      },
+      {
+        "id": "dsa_i_28",
+        "title": "Path Sum II",
+        "difficulty": "medium",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/path-sum-ii"
+      },
+      {
+        "id": "dsa_i_29",
+        "title": "Rotting Oranges",
+        "difficulty": "medium",
+        "topic": "graphs",
+        "link": "https://leetcode.com/problems/rotting-oranges"
       }
     ],
     "advanced": [
@@ -424,6 +543,62 @@
         "difficulty": "hard",
         "topic": "trie",
         "link": "https://leetcode.com/problems/palindrome-pairs"
+      },
+      {
+        "id": "dsa_a_21",
+        "title": "Minimum Size Subarray Sum",
+        "difficulty": "medium",
+        "topic": "sliding-window",
+        "link": "https://leetcode.com/problems/minimum-size-subarray-sum"
+      },
+      {
+        "id": "dsa_a_22",
+        "title": "Car Fleet",
+        "difficulty": "medium",
+        "topic": "stacks",
+        "link": "https://leetcode.com/problems/car-fleet"
+      },
+      {
+        "id": "dsa_a_23",
+        "title": "Reorder List",
+        "difficulty": "medium",
+        "topic": "linked-list",
+        "link": "https://leetcode.com/problems/reorder-list"
+      },
+      {
+        "id": "dsa_a_24",
+        "title": "Copy List with Random Pointer",
+        "difficulty": "medium",
+        "topic": "linked-list",
+        "link": "https://leetcode.com/problems/copy-list-with-random-pointer"
+      },
+      {
+        "id": "dsa_a_25",
+        "title": "Binary Tree Right Side View",
+        "difficulty": "medium",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/binary-tree-right-side-view"
+      },
+      {
+        "id": "dsa_a_26",
+        "title": "Construct Binary Tree from Inorder and Postorder Traversal",
+        "difficulty": "medium",
+        "topic": "trees",
+        "link": "https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal"
+      },
+      {
+        "id": "dsa_a_27",
+        "title": "Pacific Atlantic Water Flow",
+        "difficulty": "medium",
+        "topic": "graphs",
+        "link": "https://leetcode.com/problems/pacific-atlantic-water-flow"
+      },
+      {
+        "id": "dsa_a_28",
+        "title": "Graph Valid Tree",
+        "difficulty": "medium",
+        "topic": "graphs",
+        "link": "https://leetcode.com/problems/graph-valid-tree"
       }
     ]
   },

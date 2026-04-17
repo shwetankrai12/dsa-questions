@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Your DSA preparation dashboard. Track progress across Data Structures, Interview Prep, System Design, and OOPs.">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta name="theme-color" content="#1a0b2e">
   <title>Dashboard — DSA Sheet</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
@@ -13,8 +13,11 @@
 
   <!-- ═══ NAVBAR ═══ -->
   <nav class="navbar">
-    <a href="dashboard.html" class="navbar-logo">DSA Sheet</a>
+    <a href="dashboard.html" class="navbar-logo">DSA SHEET</a>
     <div class="navbar-right">
+      <a href="dashboard.html" class="navbar-link active">Dashboard</a>
+      <a href="streak.html"    class="navbar-link">🔥 Streak</a>
+      <a href="notes.html"     class="navbar-link">Notes</a>
       <span id="nav-user-name" class="navbar-name"></span>
       <div id="nav-user-avatar" class="navbar-avatar"></div>
       <button class="navbar-logout" onclick="handleLogout()">logout</button>
@@ -23,9 +26,35 @@
 
   <!-- ═══ MAIN ═══ -->
   <main class="page-container">
+
+    <!-- Dashboard Header -->
     <div class="dashboard-header">
-      <h1 class="dashboard-greeting" id="greeting">Hey, there</h1>
-      <p class="dashboard-subtitle">Pick up where you left off.</p>
+      <div class="dashboard-header-left">
+        <p class="dashboard-greeting" id="greeting">PLAYER 1</p>
+        <h1 class="dashboard-player-name" id="player-name">LOADING...</h1>
+        <p class="dashboard-subtitle" id="dashboard-subtitle">Pick up where you left off.</p>
+      </div>
+      <div class="player-level-badge" id="player-level">
+        <span class="player-level-num">LV1</span>
+        <span class="player-level-label">LEVEL</span>
+      </div>
+    </div>
+
+    <!-- XP Bar -->
+    <div class="xp-bar-wrap">
+      <div class="xp-bar-labels">
+        <span id="xp-label-left">0 XP</span>
+        <span id="xp-label-right">NEXT LEVEL: 100 XP</span>
+      </div>
+      <div class="xp-bar-track">
+        <div class="xp-bar-fill" id="xp-bar-fill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <!-- Quest Boards -->
+    <div class="section-header-row">
+      <span class="section-header-label">QUEST BOARDS</span>
+      <span class="section-header-dashes">────────</span>
     </div>
 
     <div class="section-grid" id="section-grid">
@@ -34,6 +63,45 @@
       <div class="section-card skeleton" style="height:100px"></div>
       <div class="section-card skeleton" style="height:100px"></div>
     </div>
+
+    <!-- Achievements -->
+    <div class="achievements-header">
+      <span class="section-header-label">ACHIEVEMENTS</span>
+      <span class="section-header-dashes">────────</span>
+    </div>
+
+    <div class="achievements-grid" id="achievements-grid">
+      <div class="achievement-badge" id="ach-first-blood">
+        <span class="achievement-icon">⚔️</span>
+        <span class="achievement-name">FIRST BLOOD</span>
+        <span class="achievement-sub">Solve 1 problem</span>
+        <span class="achievement-locked">LOCKED</span>
+      </div>
+      <div class="achievement-badge" id="ach-on-a-roll">
+        <span class="achievement-icon">🔥</span>
+        <span class="achievement-name">ON A ROLL</span>
+        <span class="achievement-sub">3-day streak</span>
+        <span class="achievement-locked">LOCKED</span>
+      </div>
+      <div class="achievement-badge" id="ach-halfway">
+        <span class="achievement-icon">🏆</span>
+        <span class="achievement-name">HALFWAY</span>
+        <span class="achievement-sub">Solve 30 problems</span>
+        <span class="achievement-locked">LOCKED</span>
+      </div>
+      <div class="achievement-badge" id="ach-champion">
+        <span class="achievement-icon">👑</span>
+        <span class="achievement-name">CHAMPION</span>
+        <span class="achievement-sub">Complete a board</span>
+        <span class="achievement-locked">LOCKED</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="dashboard-footer">
+      DSA SHEET BY SHWETANK · MIT © 2026
+    </div>
+
   </main>
 
   <div class="toast" id="toast"></div>

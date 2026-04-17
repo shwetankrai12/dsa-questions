@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track your daily DSA streak with one question per day.">
+  <meta name="theme-color" content="#1a0b2e">
+  <title>Training Grid — DSA Sheet</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar">
+    <a href="dashboard.html" class="navbar-logo">DSA SHEET</a>
+    <div class="navbar-right">
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+      <a href="streak.html"    class="navbar-link active">🔥 Streak</a>
+      <a href="notes.html"     class="navbar-link">Notes</a>
+      <span id="nav-user-name" class="navbar-name"></span>
+      <div id="nav-user-avatar" class="navbar-avatar"></div>
+      <button class="navbar-logout" onclick="handleLogout()">logout</button>
+    </div>
+  </nav>
+
+  <!-- ═══ MAIN ═══ -->
+  <main class="page-container">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" style="padding-left:0">
+      <a href="dashboard.html">DASHBOARD</a> / TRAINING GRID
+    </div>
+
+    <!-- Header -->
+    <div class="streak-header">
+      <h1>◈ TRAINING GRID ◈</h1>
+      <p>One DSA question a day — keeps the rust away.</p>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="streak-stats" id="streak-stats">
+      <div class="streak-stat-card skeleton" style="height:72px"></div>
+      <div class="streak-stat-card skeleton" style="height:72px"></div>
+      <div class="streak-stat-card skeleton" style="height:72px"></div>
+    </div>
+
+    <!-- Calendar -->
+    <div class="streak-calendar-wrap">
+      <div class="streak-cal-nav">
+        <button id="cal-prev" aria-label="Previous month">&#8592; PREV</button>
+        <span id="cal-month-label"></span>
+        <button id="cal-next" aria-label="Next month">NEXT &#8594;</button>
+      </div>
+      <div class="streak-cal-grid" id="streak-cal-grid"></div>
+
+      <!-- Legend -->
+      <div class="cal-legend">
+        <div class="cal-legend-item">
+          <div class="cal-legend-dot today"></div>
+          <span>TODAY</span>
+        </div>
+        <div class="cal-legend-item">
+          <div class="cal-legend-dot done"></div>
+          <span>DEFEATED</span>
+        </div>
+        <div class="cal-legend-item">
+          <div class="cal-legend-dot missed"></div>
+          <span>MISSED</span>
+        </div>
+        <div class="cal-legend-item">
+          <div class="cal-legend-dot locked"></div>
+          <span>FUTURE</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day Question Panel -->
+    <div class="streak-day-panel" id="streak-day-panel" style="display:none"></div>
+
+    <!-- Streak Footer -->
+    <div class="streak-footer">
+      CONSISTENCY IS THE FINAL BOSS
+    </div>
+
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initStreak();
+    });
+  </script>
+</body>
+</html>

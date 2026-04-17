@@ -81,6 +81,8 @@ app.use(express.static(FRONTEND_DIR));
 
 app.get('/dashboard',    (_req, res) => res.sendFile(path.join(FRONTEND_DIR, 'dashboard.html')));
 app.get('/section',      (_req, res) => res.sendFile(path.join(FRONTEND_DIR, 'section.html')));
+app.get('/notes',        (_req, res) => res.sendFile(path.join(FRONTEND_DIR, 'notes.html')));
+app.get('/streak',       (_req, res) => res.sendFile(path.join(FRONTEND_DIR, 'streak.html')));
 app.get('/level-select', (_req, res) => res.redirect('/index.html?auth=success'));
 
 app.get('*', (req, res) => {

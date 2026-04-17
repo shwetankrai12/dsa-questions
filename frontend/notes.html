@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Upload and manage your handwritten DSA notes.">
+  <meta name="theme-color" content="#1a0b2e">
+  <title>Field Notes — DSA Sheet</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar">
+    <a href="dashboard.html" class="navbar-logo">DSA SHEET</a>
+    <div class="navbar-right">
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+      <a href="streak.html"    class="navbar-link">🔥 Streak</a>
+      <a href="notes.html"     class="navbar-link active">Notes</a>
+      <span id="nav-user-name" class="navbar-name"></span>
+      <div id="nav-user-avatar" class="navbar-avatar"></div>
+      <button class="navbar-logout" onclick="handleLogout()">logout</button>
+    </div>
+  </nav>
+
+  <!-- ═══ MAIN ═══ -->
+  <main class="page-container">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" style="padding-left:0">
+      <a href="dashboard.html">DASHBOARD</a> / FIELD NOTES
+    </div>
+
+    <!-- Header -->
+    <div class="notes-header">
+      <h1>◆ FIELD NOTES ◆</h1>
+      <p>Upload handwritten notes — images and PDFs, stored locally in your browser.</p>
+    </div>
+
+    <!-- Upload Zone -->
+    <div class="notes-upload-zone" id="notes-upload-zone">
+      <input type="file" id="notes-file-input"
+             accept="image/jpeg,image/png,image/webp,application/pdf" multiple>
+      <div class="upload-icon">📎</div>
+      <p class="upload-primary">DROP FILES HERE OR CLICK TO UPLOAD</p>
+      <p class="upload-secondary">JPG · PNG · WEBP · PDF &nbsp;|&nbsp; MAX 5 MB PER FILE &nbsp;|&nbsp; UP TO 50 NOTES</p>
+    </div>
+
+    <!-- Notes Grid -->
+    <div class="notes-grid" id="notes-grid">
+      <!-- Rendered by JS -->
+    </div>
+
+  </main>
+
+  <!-- ═══ LIGHTBOX ═══ -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&#x2715;</button>
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <div id="lightbox-body"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initNotes();
+    });
+  </script>
+</body>
+</html>

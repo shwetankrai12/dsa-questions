@@ -21,6 +21,16 @@
   status = 200
 
 [[redirects]]
+  from = "/notes"
+  to = "/notes.html"
+  status = 200
+
+[[redirects]]
+  from = "/streak"
+  to = "/streak.html"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
