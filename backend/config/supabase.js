@@ -227,6 +227,48 @@ async function updateStreak(userId) {
     .eq('user_id', userId);
 }
 
+// ── Streak Entry Queries ──────────────────────────────────────
+
+/**
+ * Returns all streak_entries for a user as { "YYYY-MM-DD": { done: bool } }.
+ */
+async function getStreakEntries(userId) {
+  const db = getSupabase();
+  if (!db) return {};
+
+  const { data, error } = await db
+    .from('streak_entries')
+    .select('date, done')
+    .eq('user_id', userId)
+    .order('date', { ascending: true });
+
+  if (error) throw error;
+
+  return data.reduce((acc, row) => {
+    acc[row.date] = { done: row.done };
+    return acc;
+  }, {});
+}
+
+/**
+ * Upsert a single streak entry (mark a day done/undone).
+ * date must be a 'YYYY-MM-DD' string.
+ */
+async function upsertStreakEntry(userId, date, done) {
+  const db = getSupabase();
+  if (!db) return null;
+
+  const { error } = await db
+    .from('streak_entries')
+    .upsert(
+      { user_id: userId, date, done },
+      { onConflict: 'user_id,date' }
+    );
+
+  if (error) throw error;
+  return { success: true };
+}
+
 module.exports = {
   getSupabase,
   upsertUser,
@@ -235,5 +277,7 @@ module.exports = {
   getSectionProgress,
   upsertProgress,
   getStreak,
-  updateStreak
+  updateStreak,
+  getStreakEntries,
+  upsertStreakEntry
 };

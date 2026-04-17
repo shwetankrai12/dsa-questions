@@ -5,7 +5,7 @@
 
 const express              = require('express');
 const jwt                  = require('jsonwebtoken');
-const { saveLevel, getStreak } = require('../config/supabase');
+const { saveLevel, getStreak, getStreakEntries, upsertStreakEntry } = require('../config/supabase');
 const { requireAuth }      = require('../middleware/auth');
 const router               = express.Router();
 
@@ -44,6 +44,40 @@ router.get('/streak', requireAuth, async (req, res) => {
   } catch (err) {
     console.error('Error fetching streak:', err);
     res.status(500).json({ error: 'Failed to fetch streak' });
+  }
+});
+
+// ── GET /api/streak/entries ──────────────────────────────────
+// Returns { "YYYY-MM-DD": { done: bool }, ... } for the authenticated user.
+router.get('/streak/entries', requireAuth, async (req, res) => {
+  try {
+    const entries = await getStreakEntries(req.user.id);
+    res.json(entries);
+  } catch (err) {
+    console.error('Error fetching streak entries:', err);
+    res.status(500).json({ error: 'Failed to fetch streak entries' });
+  }
+});
+
+// ── POST /api/streak/entries ─────────────────────────────────
+// Body: { date: "YYYY-MM-DD", done: true|false }
+router.post('/streak/entries', requireAuth, async (req, res) => {
+  const { date, done } = req.body;
+
+  // Validate date format YYYY-MM-DD
+  if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    return res.status(400).json({ error: 'date must be YYYY-MM-DD' });
+  }
+  if (typeof done !== 'boolean') {
+    return res.status(400).json({ error: 'done must be a boolean' });
+  }
+
+  try {
+    await upsertStreakEntry(req.user.id, date, done);
+    res.json({ success: true, date, done });
+  } catch (err) {
+    console.error('Error saving streak entry:', err);
+    res.status(500).json({ error: 'Failed to save streak entry' });
   }
 });
 

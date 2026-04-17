@@ -38,12 +38,27 @@ CREATE TABLE IF NOT EXISTS streaks (
   last_practice_date  DATE
 );
 
+-- ── streak_entries ───────────────────────────────────────────
+-- One row per (user, date) — tracks the Training Grid calendar.
+-- Separate from the `streaks` table which stores the aggregated count.
+CREATE TABLE IF NOT EXISTS streak_entries (
+  id       UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id  UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  date     DATE NOT NULL,
+  done     BOOLEAN NOT NULL DEFAULT false,
+  UNIQUE (user_id, date)
+);
+
+CREATE INDEX IF NOT EXISTS streak_entries_user_idx
+  ON streak_entries (user_id, date DESC);
+
 -- ── Row Level Security ────────────────────────────────────────
 -- Enable RLS so users can only see their own data.
 
-ALTER TABLE users    ENABLE ROW LEVEL SECURITY;
-ALTER TABLE progress ENABLE ROW LEVEL SECURITY;
-ALTER TABLE streaks  ENABLE ROW LEVEL SECURITY;
+ALTER TABLE users          ENABLE ROW LEVEL SECURITY;
+ALTER TABLE progress       ENABLE ROW LEVEL SECURITY;
+ALTER TABLE streaks        ENABLE ROW LEVEL SECURITY;
+ALTER TABLE streak_entries ENABLE ROW LEVEL SECURITY;
 
 -- The backend uses the service-role key (or anon key with auth.uid()).
 -- If you use the anon key, add policies like the ones below.

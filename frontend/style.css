@@ -33,6 +33,8 @@ body {
   background: var(--bg-deep);
   color: var(--text-primary);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
 }
 
@@ -138,8 +140,15 @@ img { display: block; max-width: 100%; }
 .navbar-link.active { color: var(--accent-yellow); }
 
 /* ── Page Container ───────────────────────────────────────── */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .page-container {
   max-width: 900px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -687,7 +696,7 @@ img { display: block; max-width: 100%; }
   color: var(--text-muted);
   letter-spacing: 2px;
   text-align: center;
-  margin-top: 8px;
+  margin-top: auto;
 }
 
 /* ── Section / Quest List Page ────────────────────────────── */
@@ -956,6 +965,7 @@ img { display: block; max-width: 100%; }
   color: var(--text-muted);
   letter-spacing: 3px;
   border-top: 1px solid rgba(155,93,229,0.2);
+  margin-top: auto;
 }
 
 /* ── Toast ────────────────────────────────────────────────── */
@@ -1322,6 +1332,7 @@ img { display: block; max-width: 100%; }
   font-size: 7px;
   color: var(--text-muted);
   letter-spacing: 3px;
+  margin-top: auto;
 }
 
 /* ── Notes Page ───────────────────────────────────────────── */
