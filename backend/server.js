@@ -15,6 +15,7 @@ const authRoutes      = require('./routes/auth');
 const questionsRoutes = require('./routes/questions');
 const progressRoutes  = require('./routes/progress');
 const usersRoutes     = require('./routes/users');
+const unlocksRoutes   = require('./routes/unlocks');
 
 // Configure passport strategies (Google OAuth)
 require('./config/passport');
@@ -67,7 +68,52 @@ app.use(passport.initialize());
 app.use('/api/auth',      authRoutes);
 app.use('/api/questions', questionsRoutes);
 app.use('/api/progress',  progressRoutes);
+app.use('/api/unlocks',   unlocksRoutes);
 app.use('/api',           usersRoutes);    // /api/level  +  /api/streak
+
+// ── POST /api/migrate-from-local ─────────────────────────────
+// One-shot migration: accepts progress + streak data from localStorage
+// and upserts them into Supabase. Idempotent — safe to call more than once.
+const { requireAuth }    = require('./middleware/auth');
+const { upsertProgress, upsertStreakEntry } = require('./config/supabase');
+
+app.post('/api/migrate-from-local', requireAuth, async (req, res) => {
+  const { progress = {}, streakEntries = {} } = req.body;
+  const userId = req.user.id;
+  const errors = [];
+
+  // Migrate progress: { section: { questionId: status } }
+  const progressOps = [];
+  Object.entries(progress).forEach(([section, questions]) => {
+    Object.entries(questions).forEach(([questionId, status]) => {
+      if (['todo', 'progress', 'done'].includes(status)) {
+        progressOps.push(upsertProgress(userId, section, questionId, status));
+      }
+    });
+  });
+
+  // Migrate streak entries: { "YYYY-MM-DD": { done: bool } }
+  const streakOps = [];
+  Object.entries(streakEntries).forEach(([date, entry]) => {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(date) && typeof entry.done === 'boolean') {
+      streakOps.push(upsertStreakEntry(userId, date, entry.done));
+    }
+  });
+
+  const results = await Promise.allSettled([...progressOps, ...streakOps]);
+  results.forEach((r, idx) => {
+    if (r.status === 'rejected') {
+      console.error(`migrate-from-local op[${idx}] failed:`, r.reason);
+      errors.push({ index: idx, error: 'migration_failed' });
+    }
+  });
+
+  res.json({
+    success: errors.length === 0,
+    migrated: { progress: progressOps.length, streakEntries: streakOps.length },
+    errors
+  });
+});
 
 // ── Health Check ──────────────────────────────────────────────
 app.get('/api/health', (req, res) => {

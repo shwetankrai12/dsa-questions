@@ -5,15 +5,19 @@
 
 -- ── users ────────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS users (
-  id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  google_id    TEXT UNIQUE NOT NULL,
-  email        TEXT,
-  name         TEXT,
-  avatar       TEXT,
-  level        TEXT CHECK (level IN ('beginner', 'intermediate', 'advanced')),
-  created_at   TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  last_active  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+  id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  google_id      TEXT UNIQUE NOT NULL,
+  email          TEXT,
+  name           TEXT,
+  avatar         TEXT,
+  level          TEXT CHECK (level IN ('beginner', 'intermediate', 'advanced')),
+  unlocks_shown  TEXT[] NOT NULL DEFAULT '{}',
+  created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  last_active    TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+-- Migration: add unlocks_shown to existing tables
+ALTER TABLE users ADD COLUMN IF NOT EXISTS unlocks_shown TEXT[] NOT NULL DEFAULT '{}';
 
 -- ── progress ─────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS progress (

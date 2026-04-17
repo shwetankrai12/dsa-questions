@@ -111,10 +111,9 @@ function handleGoogleLogin() {
 }
 
 function handleLogout() {
-  // JWT is stateless — just clear local storage
+  if (typeof AppStorage !== 'undefined') AppStorage.clearCache();
   localStorage.removeItem('dsa_token');
   localStorage.removeItem('dsa_level');
-  localStorage.removeItem('dsa_progress');
   window.location.href = 'index.html';
 }
 
@@ -168,27 +167,12 @@ async function loadQuestions() {
 }
 
 function loadProgress() {
-  const stored = localStorage.getItem('dsa_progress');
-  progressData = stored ? JSON.parse(stored) : {};
+  progressData = AppStorage.cachedProgress();
   return progressData;
 }
 
-function saveProgress() {
-  localStorage.setItem('dsa_progress', JSON.stringify(progressData));
-}
-
 async function syncProgressFromBackend() {
-  try {
-    const res = await authFetch(`${API_BASE}/progress`);
-    if (!res.ok) return;
-    const backendProgress = await res.json();
-
-    Object.entries(backendProgress).forEach(([section, questions]) => {
-      if (!progressData[section]) progressData[section] = {};
-      Object.assign(progressData[section], questions);
-    });
-    saveProgress();
-  } catch (_) { /* offline — use localStorage */ }
+  progressData = await AppStorage.getProgress();
 }
 
 // ═══ Dashboard ════════════════════════════════════════════════
@@ -207,6 +191,9 @@ async function initDashboard() {
     window.location.href = 'index.html';
     return;
   }
+
+  // One-time migration of localStorage data → Supabase
+  AppStorage.migrateFromLocalIfNeeded();
 
   // Render immediately with local data
   loadProgress();
@@ -451,10 +438,9 @@ function renderQuestionList(sectionKey) {
 async function setStatus(sectionKey, questionId, status, event) {
   if (event) event.stopPropagation();
 
-  // Optimistic update — UI responds instantly
-  if (!progressData[sectionKey]) progressData[sectionKey] = {};
-  progressData[sectionKey][questionId] = status;
-  saveProgress();
+  // Optimistic update — Storage handles persistence + retry
+  AppStorage.setQuestionStatus(sectionKey, questionId, status);
+  progressData = AppStorage.cachedProgress();
   renderQuestionList(sectionKey);
   updateSectionSummary(sectionKey);
 
@@ -463,12 +449,6 @@ async function setStatus(sectionKey, questionId, status, event) {
 
   // Marking a question defeated counts as today's practice
   if (status === 'done') markTodayDone();
-
-  // Persist to backend in the background
-  authFetch(`${API_BASE}/progress`, {
-    method: 'POST',
-    body:   JSON.stringify({ section: sectionKey, questionId, status })
-  }).catch(() => {});
 }
 
 function updateSectionSummary(sectionKey) {
@@ -780,7 +760,6 @@ function initImageZoom(img) {
 
 // ═══ Streak ═══════════════════════════════════════════════════
 
-const STREAK_KEY = 'dsa_streak_data';
 
 let streakCalYear  = new Date().getFullYear();
 let streakCalMonth = new Date().getMonth();
@@ -819,11 +798,7 @@ const TOPIC_HINTS = {
 };
 
 function loadStreakData() {
-  try { return JSON.parse(localStorage.getItem(STREAK_KEY) || '{}'); } catch (_) { return {}; }
-}
-
-function saveStreakData(data) {
-  localStorage.setItem(STREAK_KEY, JSON.stringify(data));
+  return AppStorage.cachedStreakEntries();
 }
 
 function dateKey(date) {
@@ -891,47 +866,16 @@ function calcThisMonth(data) {
 }
 
 // ── Mark Today Done ───────────────────────────────────────────
-// Called when any question is marked DEFEATED in the quest list.
-// Only writes if today isn't already marked done (idempotent).
 function markTodayDone() {
   const tk   = todayKey();
   const data = loadStreakData();
   if (!data[tk]?.done) {
-    data[tk] = { done: true };
-    saveStreakData(data);
-    pushStreakEntry(tk, true);
+    AppStorage.setStreakEntry(tk, true);
   }
 }
 
-// ── Backend Sync ──────────────────────────────────────────────
-
-/**
- * Fetch streak entries from the backend and merge into localStorage.
- * Backend is the source of truth — its values overwrite local ones on conflict.
- */
 async function syncStreakFromBackend() {
-  try {
-    const res = await authFetch(`${API_BASE}/streak/entries`);
-    if (!res.ok) return;
-
-    const remote = await res.json();  // { "YYYY-MM-DD": { done: bool }, ... }
-    const local  = loadStreakData();
-
-    // Merge: remote wins
-    const merged = Object.assign({}, local, remote);
-    saveStreakData(merged);
-  } catch (_) { /* offline — keep local */ }
-}
-
-/**
- * Push a single entry to the backend in the background.
- * Fire-and-forget: localStorage is already updated by the caller.
- */
-function pushStreakEntry(date, done) {
-  authFetch(`${API_BASE}/streak/entries`, {
-    method: 'POST',
-    body:   JSON.stringify({ date, done })
-  }).catch(() => {});
+  await AppStorage.getStreakEntries();
 }
 
 // ── Init ──────────────────────────────────────────────────────
@@ -1141,15 +1085,11 @@ function toggleStreakDone(dateStr) {
   const data    = loadStreakData();
   const wasDone = data[dateStr]?.done === true;
   const newDone = !wasDone;
-  data[dateStr] = { done: newDone };
-  saveStreakData(data);
+  AppStorage.setStreakEntry(dateStr, newDone);
   renderStreakStats();
   renderCalendar(streakCalYear, streakCalMonth);
   renderDayPanel(dateStr);
   showToast(wasDone ? 'QUEST RESET' : 'ENEMY DEFEATED ✓');
-
-  // Persist to Supabase in the background
-  pushStreakEntry(dateStr, newDone);
 }
 
 // ═══ Landing Page (index.html) ════════════════════════════════

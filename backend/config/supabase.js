@@ -2,23 +2,9 @@
 // Supabase Client + All Database Query Functions
 // ============================================================
 
-const { createClient } = require('@supabase/supabase-js');
-
-let supabase = null;
+const supabase = require('../lib/supabase');
 
 function getSupabase() {
-  if (supabase) return supabase;
-
-  const url  = process.env.SUPABASE_URL;
-  const key  = process.env.SUPABASE_ANON_KEY;
-
-  if (!url || !key) {
-    console.warn('⚠️  Supabase not configured — progress will not persist.');
-    return null;
-  }
-
-  supabase = createClient(url, key);
-  console.log('✅ Supabase client initialised');
   return supabase;
 }
 

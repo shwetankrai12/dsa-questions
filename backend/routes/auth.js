@@ -30,8 +30,8 @@ router.get('/google', passport.authenticate('google', {
 router.get('/google/callback', (req, res, next) => {
   passport.authenticate('google', (err, user) => {
     if (err) {
-      console.error('OAuth error:', err.code, err.message);
-      return res.redirect(`${FRONTEND_URL}/index.html?auth=failed&reason=${encodeURIComponent(err.message)}`);
+      console.error('OAuth error:', err);
+      return res.redirect(`${FRONTEND_URL}/index.html?auth=failed`);
     }
     if (!user) {
       return res.redirect(`${FRONTEND_URL}/index.html?auth=failed`);
