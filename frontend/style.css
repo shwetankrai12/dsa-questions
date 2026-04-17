@@ -350,8 +350,14 @@ main {
 
 @media (max-width: 639px) {
   .floating-bg {
-    display: none;
+    width: 28px;
+    height: 28px;
+    opacity: 0.35;
   }
+  .pacman { top: 8%;    left: 4%;  }
+  .blinky { top: 12%;   right: 4%; }
+  .pinky  { bottom: 18%; left: 4%; }
+  .inky   { bottom: 12%; right: 4%; }
 }
 
 /* ── Level Selection ──────────────────────────────────────── */
