@@ -1335,6 +1335,69 @@ main {
   margin-top: auto;
 }
 
+/* ── Notes Drive Banner ───────────────────────────────────── */
+.notes-drive-banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-panel);
+  border-left: 4px solid var(--accent-cyan);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+.notes-drive-icon {
+  flex-shrink: 0;
+  color: var(--accent-cyan);
+}
+
+.notes-drive-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.notes-drive-heading {
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  color: var(--accent-cyan);
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.notes-drive-sub {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.notes-drive-btn {
+  flex-shrink: 0;
+  display: inline-block;
+  padding: 12px 18px;
+  background: var(--accent-cyan);
+  color: #000;
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  letter-spacing: 2px;
+  box-shadow: 4px 4px 0 var(--bg-dark);
+  transition: transform 80ms, box-shadow 80ms;
+  white-space: nowrap;
+}
+.notes-drive-btn:hover  { transform: translateY(-2px); box-shadow: 4px 6px 0 var(--bg-dark); }
+.notes-drive-btn:active { transform: translateY(1px);  box-shadow: 2px 2px 0 var(--bg-dark); }
+
+@media (max-width: 640px) {
+  .notes-drive-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 18px;
+    gap: 14px;
+  }
+  .notes-drive-btn { width: 100%; text-align: center; display: block; }
+}
+
 /* ── Notes Page ───────────────────────────────────────────── */
 .notes-header { padding: 24px 0 20px; }
 .notes-header h1 {
